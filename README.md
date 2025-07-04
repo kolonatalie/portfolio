@@ -3,7 +3,7 @@
 A minimalist and responsive personal portfolio website built with HTML and CSS.
 
 ## Features & Highlights
-- Custom fonts with Google Fonts (Courier Prime, Send Flowers)
+- Custom Google Font Courier Prime
 
 - Subtle background animation using @keyframes and linear-gradient
 

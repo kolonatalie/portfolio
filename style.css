@@ -66,8 +66,8 @@
 
     .container > :first-child {
       color: #ea9d0d;
-      font-family: "Send Flowers", cursive;
-      font-size: 40px;
+      font-family: "Courier Prime", monospace;
+      font-size: 28px;
     }
     h1 {
       font-size: 45px;
@@ -202,7 +202,7 @@
       }
       .container > :first-child {
         line-height: 1em;
-        font-size: 35px;
+        font-size: 1.5em;
       }
       .bio {
       width: 95%;
