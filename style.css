@@ -2,7 +2,6 @@
 :root {
 --color-bg: hsl(0, 0%, 10%);
 --font-sans: "Montserrat", sans-serif;
---font-serif: ;
 --font-mono: "Source Code Pro", monospace;
 --primary-color: hsl(272, 100%, 74%);
 --dark-primary-color: color-mix(in srgb, var(--primary-color), black 30%);
@@ -158,7 +157,6 @@ p {
     justify-content: start;
     flex-direction: column;
     margin-top: calc(var(--spacing) * 12);
-
     opacity: 0;
     transform: translateY(10px);
     filter: blur(2px);
