@@ -1,25 +1,36 @@
-# One-Page Portfolio
+[![Natalia aka kolonatalie — a front-end developer in training](images/demo.gif)](https://kolonatalie.github.io/portfolio/)
+# Personal Portfolio Website
 
-A minimalist and responsive personal portfolio website built with HTML and CSS.
 
-## Features & Highlights
-- Custom Google Font Courier Prime
+The site is built with semantic HTML, modern CSS (including animations, custom properties, and responsive layouts), and a focus on accessibility.
 
-- Subtle background animation using @keyframes and linear-gradient
+## Notable CSS Features
 
-- Floating container animation
+- **Custom Properties (CSS Variables):** for colors, spacing, typography, and animations.
 
-- Fully responsive design with multiple media queries
+- **Radial Grid Background:** using `radial-gradient` + `mask` for a layered, dimensional effect.
 
-- Hover interactions on links and buttons
+- **Smooth Fade-in Animations:** keyframes for staged content reveal.
 
-- Flexbox layout
+- **Accessible Link States:** hover, focus, and selection styles for better UX.
 
-- Image layering with pseudo-elements (::before) and z-index
+- **Text Balance & Clamp:** `text-wrap: balance` and `clamp()` for adaptive typography.
+
+- **Marquee Animation:** subtle horizontal text scroll for personality.
 
 ## 🔗 [Live Demo](https://kolonatalie.github.io/portfolio/)
 
 [![Website Screenshot](images/screenshot.jpg)](https://kolonatalie.github.io/portfolio/)
 
+## 🤝 Open for Collaboration
+I’m not just looking for jobs — I’m open to **creative collaborations, learning projects, hackathons, and design-to-code partnerships.**
+If you enjoy mixing creativity with code, let’s connect.
+
+- **LinkedIn:** [linkedin.com/in/kolonatalie](https://www.linkedin.com/in/kolonatalie/)
+- **GitHub:** [github.com/kolonatalie](https://github.com/kolonatalie)
+- **Bluesky:** [kolonatalie.bsky.social](https://bsky.app/profile/kolonatalie.bsky.social)
+
 ## 📌 Note  
-This project is part of my **learning a responsive portfolio** — more updates and improvements to come!
+This portfolio will continue to evolve as I improve my skills and experiment with new front-end technologies.
+
+![Natalia aka kolonatalie — a front-end developer in training](images/kolonatalie-banner-pic.jpg)
