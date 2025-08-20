@@ -81,16 +81,35 @@
         }
     }
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <link href="style.css" rel="stylesheet"/>
     <link rel="icon" href="images/favicon.ico" />
 </head>
 <body>
     <nav>
-        <a href="https://kolonatalie.github.io/portfolio/">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-            </svg>
-        </a>
+        <div class="nav-center">
+            <div class="nav-header">
+                <a href="https://kolonatalie.github.io/portfolio/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    </svg>
+                </a>
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul class="links">
+            <li>
+                <a href="https://github.com/kolonatalie" target="_blank">gitHub</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/kolonatalie/" target="_blank">linkedin</a>
+            </li>
+            <li>
+                <a href="https://bsky.app/profile/kolonatalie.bsky.social" target="_blank">bluesky</a>
+            </li>
+            </ul>
+        </div>
     </nav>
     <section>
         <header>
@@ -106,12 +125,36 @@
             </div>
             <div>
                 <ul class="social">
-                    <li>gitHub: <a href="https://github.com/kolonatalie" target="_blank">recent projects</a></li>
-                    <li>codewars: <span class="running"><span><a href="https://www.codewars.com/users/kolonatalie" target="_blank"><span> * let's solve logic challenges </span><span> * let's solve logic challenges </span></a></span></li>
-                    <li>codePen: <a href="https://codepen.io/kolonatalie/pen/LEpzBLw" target="_blank">Gradient Generator</a></li>
+                    <li>gitHub: <a href="https://github.com/kolonatalie/frontend-practice-projects" target="_blank">front-end projects</a></li>
+                    <li>recent: <a href="https://kolonatalie.github.io/pastel-gradient-generator/" target="_blank">Gradient Generator</a></li>
+                    <li>codewars: <span class="running"><span><a href="https://www.codewars.com/users/kolonatalie" target="_blank"><span> * let's solve logic challenges </span><span> * let's solve logic challenges </span></a></span></span></li>
+                    <li>
+                        <details>
+                            <summary>
+                                 What <span>people are saying</span>
+                            </summary>
+                            <article class="review">
+                                <p id="author"></p>
+                                <p id="country"></p>
+                                <p id="info"></p>
+                                <div class="button-container">
+                                    <button class="prev-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="next-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </article>
+                        </details>
+                    </li>
                 </ul>
             </div>
         </main>
     </section>
+    <footer>
+        <p>© 2025 — The site is built with love by <a href="https://github.com/kolonatalie" title="Who is kolonatalie?" target="_blank">kolonatalie</a></p>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>
