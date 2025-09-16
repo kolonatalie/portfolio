@@ -93,13 +93,17 @@
     </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style-min.css?v=20250916">
+  
   <link rel="icon" href="assets/images/favicons/favicon-256.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/favicons/favicon-180.png">
   <link rel="icon" href="assets/images/favicons/favicon-512.png" type="image/png">
+
+  <link rel="preload" as="image" href="assets/images/kolonatalie-main-photo.jpg" fetchpriority="high">
 </head>
 
 <body>
@@ -278,7 +282,7 @@
         <h2>frontend developer</h2>
         <p class="subtitle"> in training</p>
       </div>
-      <img src="assets/images/kolonatalie-main-photo.jpg" alt="kolonatalie">
+      <img src="assets/images/kolonatalie-main-photo.jpg" alt="kolonatalie front-end developer" fetchpriority="high">
     </div>
     <p>
       I'm a career switcher blending years of augmented reality (AR) effects
@@ -491,8 +495,8 @@
     </button>
   </footer>
 
-  <script src="assets/js/main-min.js?v=20250916"></script>
-  <script src="assets/js/nav.js?v=20250916"></script>
+  <script src="assets/js/main-min.js?v=20250916" defer></script>
+  <script src="assets/js/nav.js?v=20250916" defer></script>
 
   <script>
     // Playing Now Block
