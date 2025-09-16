@@ -91,7 +91,11 @@
         }
     }
     </script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20250916">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style-min.css?v=20250916">
   <link rel="icon" href="assets/images/favicons/favicon-256.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/favicons/favicon-180.png">
@@ -102,7 +106,7 @@
   <nav>
     <div class="nav-center">
       <div class="nav-header">
-        <a href="/" aria-label="Go to Portfolio Homepage">
+        <a href="/portfolio/" aria-label="Go to Portfolio Homepage">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-circle"
             viewBox="0 0 16 16">
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
@@ -215,7 +219,7 @@
     <p class="accent">— projects</p>
     <h2>work that works</h2>
     <p class="subtitle">building digital experiences that get results</p>
-    <a href="/" class="project-link" title="">
+    <a href="/portfolio/" class="project-link" title="">
       <div class="project-card fade-in-section">
         <div class="image-overlay">
           <h3>website you're on</h3>
@@ -433,7 +437,7 @@
   </section>
 
   <footer>
-    <a href="/" aria-label="Go to Portfolio Homepage" class="motion-effect">
+    <a href="/portfolio/" aria-label="Go to Portfolio Homepage" class="motion-effect">
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-circle"
         viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
@@ -476,8 +480,8 @@
         </a>
       </li>
     </ul>
-    <p>© 2025 Built with love by <a href="https://github.com/kolonatalie" title="kolonatalie on GitHub"
-        target="_blank" class="text-link">kolonatalie</a></p>
+    <p>© 2025 Built with love by <a href="https://github.com/kolonatalie" title="kolonatalie on GitHub" target="_blank"
+        class="text-link">kolonatalie</a></p>
     <button id="back-to-top" title="Go to top">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-up"
         viewBox="0 0 16 16">
@@ -487,9 +491,52 @@
     </button>
   </footer>
 
-  <script src="assets/js/main.js?v=20250916"></script>
   <script src="assets/js/main-min.js?v=20250916"></script>
   <script src="assets/js/nav.js?v=20250916"></script>
+
+  <script>
+    // Playing Now Block
+
+    const LastFm_userName = 'kolonatalie';
+    const LastFm_API_key = '2306492e3227f916f9633d4b82d81ee7';
+
+    const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LastFm_userName}&api_key=${LastFm_API_key}&format=json`;
+
+    async function getNowPlaying() {
+      const nowPlayingElement = document.getElementById('now-playing-song');
+      const defaultText = `playing now: <span class="running"><span><a href="https://www.last.fm/user/kolonatalie/playlists/14361203" target="_blank"><span> * Chill Vibes Playlist</span><span> * Chill Vibes Playlist</span></a></span></span>`;
+
+      if (nowPlayingElement) {
+        nowPlayingElement.innerHTML = defaultText;
+      }
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.recenttracks && data.recenttracks.track) {
+          const track = Array.isArray(data.recenttracks.track) ? data.recenttracks.track[0] : data.recenttracks.track;
+          const isNowPlaying = track['@attr'] && track['@attr'].nowplaying === 'true';
+
+          if (isNowPlaying) {
+            const artist = track.artist['#text'];
+            const song = track.name;
+            const songUrl = track.url;
+            const nowPlayingText = `${artist} - ${song}`;
+
+            if (nowPlayingElement) {
+              nowPlayingElement.innerHTML = `playing now: <span class="running"><span><a href="${songUrl}" target="_blank"><span> * ${nowPlayingText}</span><span>  * ${nowPlayingText}
+                  </span></a></span></span>`;
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching data from Last.fm:', error);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', getNowPlaying);
+  </script>
+
 </body>
 
 </html>

@@ -17,7 +17,7 @@ I also built this blog completely from scratch, you can <a href="../blog/#post-f
 
 Curious about my frontend projects? Start with my <a href="/" target="_blank">portfolio website</a>. I've written about some of the cool things I built into it <a href="../blog/#post-portfolio-features">here</a>.
 
-*Have questions or ideas? Feel free to <a href="/#contact" target="_blank">contact me</a>*
+*Have questions or ideas? Feel free to <a href="../#contact" target="_blank">contact me</a>*
 <br>
 <br>
 Find me on <a href="https://www.linkedin.com/in/kolonatalie/" target="_blank">LinkedIn</a> | <a href="https://bsky.app/profile/kolonatalie.bsky.social" target="_blank">Bluesky</a> | <a href="https://github.com/kolonatalie" target="_blank">GitHub</a>
