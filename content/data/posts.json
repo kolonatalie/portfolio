@@ -1,0 +1,32 @@
+[
+  {
+    "id": "welcome",
+    "title": "",
+    "views": "7.2K",
+    "file": "../content/posts/welcome.md"
+  },
+  {
+    "id": "blog-features-part-2-design",
+    "title": "Blog Features — Part 2 (Design)",
+    "views": "6.7K",
+    "file": "../content/posts/post4.md"
+  },
+  {
+    "id": "frontend-from-scratch-blog-features-part-1",
+    "title": "Frontend from Scratch: Blog Features — Part 1",
+    "views": "7.1K",
+    "file": "../content/posts/post3.md"
+  },
+  {
+    "id": "portfolio-features",
+    "title": "Portfolio Website — Features",
+    "views": "4.5K",
+    "file": "../content/posts/post2.md"
+  },
+  {
+    "id": "from-zero-to-frontend",
+    "title": "From Zero to Frontend: My Career Switch Story",
+    "views": "2.8K",
+    "file": "../content/posts/post1.md"
+  }
+]
