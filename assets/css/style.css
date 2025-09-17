@@ -666,6 +666,7 @@ span.subtitle {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  justify-self: center;
 }
 
 .project-card {
@@ -675,7 +676,7 @@ span.subtitle {
   position: relative;
   width: 100%;
   max-width: 550px;
-  justify-self: center;
+  
 }
 
 .project-card .img {
