@@ -96,14 +96,21 @@
 
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-    rel="stylesheet">
+    rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet">
+  </noscript>
+
   <link rel="stylesheet" href="assets/css/style-min.css?v=20250916">
-  
+
   <link rel="icon" href="assets/images/favicons/favicon-256.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/favicons/favicon-180.png">
   <link rel="icon" href="assets/images/favicons/favicon-512.png" type="image/png">
 
-  <link rel="preload" as="image" href="assets/images/kolonatalie-main-photo.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/kolonatalie-main-photo.webp" fetchpriority="high">
 </head>
 
 <body>
@@ -223,14 +230,14 @@
     <p class="accent">— projects</p>
     <h2>work that works</h2>
     <p class="subtitle">building digital experiences that get results</p>
-    <a href="/portfolio/" class="project-link" title="">
+    <a href="/portfolio/" class="project-link" title="You are here">
       <div class="project-card fade-in-section">
         <div class="image-overlay">
           <h3>website you're on</h3>
           <p>Built with clean, responsive code</p>
         </div>
-        <img src="assets/images/portfolio-website-kolonatalie.jpg" title="project-1" data-id="1" class="img"
-          alt="project-1" />
+        <img src="assets/images/portfolio-website-kolonatalie.webp" title="Portfolio made by kolonatalie | front-end developer" data-id="1" class="img"
+          alt="Portfolio by kolonatalie | front-end developer" loading="lazy"/>
       </div>
     </a>
     <a href="blog/" class="project-link" target="_blank" title="Frontend from Scratch | Career Switch Blog">
@@ -239,9 +246,9 @@
           <h3>blog template</h3>
           <p>Custom blog with infinite scroll & local storage for likes</p>
         </div>
-        <img src="assets/images/messenger-like-blog-kolonatalie.jpg" title="Frontend from Scratch | Career Switch Blog"
+        <img src="assets/images/messenger-like-blog-kolonatalie.webp" title="Frontend from Scratch | Career Switch Blog"
           data-id="2" class="img"
-          alt="Messenger-like blog with infinite scroll, local storage for reactions, and hash-based navigation" />
+          alt="Messenger-like blog with infinite scroll, local storage for reactions, and hash-based navigation" loading="lazy"/>
       </div>
     </a>
     <a href="https://kolonatalie.github.io/snake/" class="project-link" target="_blank" title="Play Snake Game Online">
@@ -250,8 +257,8 @@
           <h3>game engine</h3>
           <p>Interactive game built with JavaScript & DOM manipulation</p>
         </div>
-        <img src="assets/images/snake-game-project.jpg" title="Snake Game" data-id="3" class="img"
-          alt="Classic Snake Game built with JavaScript, HTML & CSS." />
+        <img src="assets/images/snake-game-project.webp" title="Snake Game" data-id="3" class="img"
+          alt="Classic Snake Game built with JavaScript, HTML & CSS." loading="lazy"/>
       </div>
     </a>
     <a href="https://kolonatalie.github.io/quote-of-the-day/" class="project-link" target="_blank"
@@ -261,8 +268,8 @@
           <h3>data-driven web app</h3>
           <p>Loads data asynchronously for a responsive design</p>
         </div>
-        <img src="assets/images/quote-of-the-day-web-app.jpg" title="Quote of the Day Web App" data-id="4" class="img"
-          alt="Web app that shows one quote per day" />
+        <img src="assets/images/quote-of-the-day-web-app.webp" title="Quote of the Day Web App" data-id="4" class="img"
+          alt="Web app that shows one quote per day" loading="lazy"/>
       </div>
     </a>
 
@@ -282,7 +289,7 @@
         <h2>frontend developer</h2>
         <p class="subtitle"> in training</p>
       </div>
-      <img src="assets/images/kolonatalie-main-photo.jpg" alt="kolonatalie front-end developer" fetchpriority="high">
+      <img src="assets/images/kolonatalie-main-photo.webp" alt="kolonatalie front-end developer" fetchpriority="high">
     </div>
     <p>
       I'm a career switcher blending years of augmented reality (AR) effects
@@ -496,7 +503,7 @@
   </footer>
 
   <script src="assets/js/main-min.js?v=20250916" defer></script>
-  <script src="assets/js/nav.js?v=20250916" defer></script>
+  <script src="assets/js/nav-min.js?v=20250916" defer></script>
 
   <script>
     // Playing Now Block

@@ -23,27 +23,6 @@ async function loadAndRenderInitialPosts() {
   }
 }
 
-async function getFileDate(filePath) {
-  try {
-    const response = await fetch(filePath, { method: "HEAD" });
-    const lastModified = response.headers.get("Last-Modified");
-    if (lastModified) {
-      return new Date(lastModified).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric"
-      });
-    }
-  } catch (err) {
-    console.error("Couldn't fetch file date:", err);
-  }
-  return new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric"
-  });
-}
-
 function createReactionButtonHTML(id, reaction, savedReaction) {
   const count = getLikes(id, reaction);
   const isVisible = count > 0 ? '' : 'hidden';
@@ -78,7 +57,7 @@ async function renderPosts() {
       const savedReaction = getSavedReaction(post.id);
       const shareUrl = window.location.origin + window.location.pathname + `#post-${post.id}`;
 
-      const date = await getFileDate(post.file);
+      const date = post.date;
 
       const article = document.createElement("article");
       article.classList.add("post");

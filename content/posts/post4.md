@@ -1,5 +1,5 @@
 <img
-  src="../assets/images/post-images/blog-features.jpg"
+  src="../assets/images/post-images/blog-features.webp"
   alt="kolonatalie | frontend developer"
   style="aspect-ratio: 5 / 4" >
 

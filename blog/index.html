@@ -71,7 +71,17 @@
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet">
+  </noscript>
+  
   <link rel="stylesheet" href="../assets/css/style-min.css?v=20250916">
   <link rel="icon" href="../assets/images/favicons/favicon-256.png" type="image/png">
   <link rel="apple-touch-icon" href="../assets/images/favicons/favicon-180.png">
@@ -237,7 +247,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
   <script src="../assets/js/blog-min.js?v=20250916"></script>
-  <script src="../assets/js/nav.js?v=20250916" defer></script>
+  <script src="../assets/js/nav-min.js?v=20250916" defer></script>
 </body>
 
 </html>
