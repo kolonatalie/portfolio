@@ -1,61 +1,55 @@
-// ===============
-// NavBar
-// ===============
+export function setupNavToggle() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.links');
 
-const navToggle = document.querySelector(".nav-toggle");
-const links = document.querySelector(".links");
+  if (navToggle && links) {
+    navToggle.addEventListener('click', () => {
+      links.classList.toggle('show-links');
+      navToggle.classList.toggle('active');
+    });
+  }
+}
 
-navToggle.addEventListener("click", function () {
-  links.classList.toggle("show-links");
-  navToggle.classList.toggle("active");
-});
+export function setupSmoothScroll() {
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+  const offset = 80;
 
-// ===============
-// Anchor links
-// ===============
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
 
-const navLinks = document.querySelectorAll('a[href^="#"]');
-const offset = 80;
+      if (targetSection) {
+        const rect = targetSection.getBoundingClientRect();
+        const finalPosition = window.scrollY + rect.top - offset;
+        window.scrollTo({
+          top: finalPosition,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
+}
 
-navLinks.forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
+export function setupBackToTop() {
+  const backToTopButton = document.getElementById('back-to-top');
+  if (!backToTopButton) return;
 
-    const targetId = this.getAttribute('href').substring(1);
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-    const targetSection = document.getElementById(targetId);
-
-    if (targetSection) {
-      const rect = targetSection.getBoundingClientRect();
-
-      const finalPosition = window.scrollY + rect.top - offset;
-
-      window.scrollTo({
-        top: finalPosition,
-        behavior: 'smooth'
-      });
+    if (scrollPosition > 500) {
+      backToTopButton.style.display = 'flex';
+    } else {
+      backToTopButton.style.display = 'none';
     }
   });
-});
 
-// ===============
-// Back To Top
-// ===============
-
-window.addEventListener('scroll', () => {
-  const backToTopButton = document.getElementById('back-to-top');
-  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-  if (scrollPosition > 900) {
-    backToTopButton.style.display = 'flex';
-  } else {
-    backToTopButton.style.display = 'none';
-  }
-});
-
-document.getElementById('back-to-top').addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   });
-});
+}

@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/extensions": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }]
+  },
+  "globals": {
+    "marked": "readonly",
+    "process": "readonly"
+  }
+}

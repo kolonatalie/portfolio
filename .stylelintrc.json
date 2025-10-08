@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "@stylistic/stylelint-plugin"
+  ],
+  "rules": {
+    "@stylistic/indentation": 2,
+    "@stylistic/color-hex-case": "lower",
+    "@stylistic/number-leading-zero": "always",
+    "number-max-precision": null,
+    "max-nesting-depth": 3,
+    "selector-class-pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", 
+    "color-no-invalid-hex": true
+  }
+}
