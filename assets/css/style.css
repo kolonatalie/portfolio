@@ -1381,13 +1381,17 @@ BLOG
 }
 
 .post code {
+  display: inline-block;
+  width: 100%;
   padding: 0.1rem 0.5rem;
   font-family: var(--font-mono);
   color: skyblue;
   letter-spacing: var(--letter-spaing-base);
+  text-wrap: wrap;
   background: var(--color-bg);
   border: 1px solid hsl(0deg 0% 20%);
   border-radius: 0.2rem;
+  
 }
 
 .post details {

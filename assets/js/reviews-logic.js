@@ -48,7 +48,7 @@ export function showPerson(personIndex, reviewElements, state) {
   if (state.isAnimating) return;
   state.isAnimating = true;
 
-  reviewElements.forEach((el) => el.classList.remove('isShown'));
+  reviewElements.forEach((el) => el.classList.remove('is-shown'));
 
   const transitionPromises = reviewElements.map((el) => new Promise((resolve) => {
     const onTransitionEnd = () => {
@@ -61,7 +61,7 @@ export function showPerson(personIndex, reviewElements, state) {
   Promise.all(transitionPromises).then(() => {
     updateReviewsContent(personIndex, reviewElements);
 
-    reviewElements.forEach((el) => el.classList.add('isShown'));
+    reviewElements.forEach((el) => el.classList.add('is-shown'));
     state.isAnimating = false;
   });
 }

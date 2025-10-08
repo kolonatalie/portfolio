@@ -33,20 +33,26 @@ Classic and simple:
 ```bash
 h1 {
   font-size: 50px;
-
-  @include screen(tablet) {
+  
+  @media screen 
+  and (width >=768px) {
+    
     font-size: 40px;
   }
 
-  @include screen(mobile) {
+  @media screen
+  and (width >=360px) {
+    
     font-size: 30px;
   }
 }
 
 p {
   font-size: 17px;
-
-  @include screen(mobile) {
+  
+  @media screen 
+  and (width >=360px) {
+    
     font-size: 15px;
   }
 }
@@ -54,17 +60,19 @@ p {
 <br>
 <br>
 
-🟣 **Option B: Fluid typography with `clamp()`**
+🟣 **Option B: Fluid typography with** `clamp()`
 
 Modern & smooth — the font scales automatically between breakpoints:
-```bash
-    h1 {
-    font-size: clamp(30px, 5vw, 50px);
-    }
+```
+h1 {
+    font-size: 
+    clamp(30px, 5vw, 50px);
+}
 
-    p {
-    font-size: clamp(15px, 2vw, 17px);
-    }
+p {
+    font-size: 
+    clamp(15px, 2vw, 17px);
+}
 ```
 <br>
 <br>
@@ -83,3 +91,11 @@ Don’t forget line-height!
 - Paragraphs: ~1.5–1.7
 
 This helps readability, especially when text shrinks.
+
+I'm going to talk about "What 5vw / 2vw means" in the next post. 
+
+———
+
+Stay tuned!
+
+xoxo
