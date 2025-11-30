@@ -1333,11 +1333,12 @@ BLOG
 */
 
 .post h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-family: var(--font-sans);
   font-size: var(--blog-text-h1);
   font-weight: 700;
   line-height: 2.72rem;
+  text-transform: capitalize;
 }
 
 .post h2 {
@@ -1382,16 +1383,16 @@ BLOG
 
 .post code {
   display: inline-block;
-  width: 100%;
+  
   padding: 0.1rem 0.5rem;
   font-family: var(--font-mono);
   color: skyblue;
   letter-spacing: var(--letter-spaing-base);
+  line-height: 1.5rem;
   text-wrap: wrap;
   background: var(--color-bg);
   border: 1px solid hsl(0deg 0% 20%);
   border-radius: 0.2rem;
-  
 }
 
 .post details {
@@ -1739,6 +1740,20 @@ article.post {
   max-width: var(--spacing-content);
   height: 70vh;
   text-align: center;
+  opacity: 0;
+  animation: loading-fade-in 1s ease-in-out 1s forwards;
+}
+
+@keyframes loading-fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 .is-hidden {
