@@ -7,6 +7,13 @@
     "file": "../content/posts/welcome.md"
   },
   {
+    "id": "high-performance-web-animation",
+    "title": "High-Performance Web Animation: GSAP, WebGL, and the Secret to 60fps",
+    "views": "5.3K",
+    "date": "Dec 8, 2025",
+    "file": "../content/posts/post7.md"
+  },
+  {
     "id": "pure-css-shimmer-effect",
     "title": "Pure CSS Shimmer Effect: Recreate a 3D-Inspired Light Swipe",
     "views": "3.8K",

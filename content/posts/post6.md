@@ -78,7 +78,7 @@ All these effects trigger instantly and run smoothly in parallel due to the powe
 ### Your Turn
 Pure CSS is a powerful tool for visual engineers. By understanding pseudo-elements and transitions, you can create dynamic effects with zero performance cost.
 
-Feel free to drop a comment or start discussion in my [discord community.](https://discord.gg/prqvsDRdNk) 
+Feel free to start discussion in my [discord community.](https://discord.gg/prqvsDRdNk) 
 
 💡 Find the complete source code for this project in this [GitHub
 repo.](https://github.com/kolonatalie/frontend-practice-projects)
