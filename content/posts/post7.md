@@ -1,8 +1,10 @@
-<img src="/assets/images/post-images/Web-animation.jpg" alt="High-Performance Web Animation: GSAP, WebGL, and the Secret to 60fps" width=700 height=280>
+<img src="../assets/images/post-images/Web-animation.jpg" alt="High-Performance Web Animation: GSAP, WebGL, and the Secret to 60fps" width=700 height=280>
 
 Frontend developers strive to create not just beautiful but also performant web experiences. Achieving smooth, 60fps animation is non-negotiable for a modern user interface. To hit that magic number, we must understand the core tools and, crucially, how the browser’s engine works.
 
 This article breaks down the essential concepts every performance-minded developer should master: the difference between animation controllers (GSAP) and renderers (WebGL), the limitations of CSS, and the critical role of the CPU and GPU in the rendering pipeline.
+<br>
+<br>
 
 ## **GSAP vs. WebGL**
 While often used in the same context, GSAP and WebGL serve fundamentally different roles in web development.
@@ -34,7 +36,9 @@ Games, 3D product visualizers, complex data visualizations, and advanced visual 
 - #### How They Work Together
 WebGL (often via a library like Three.js) creates the 3D scene, and GSAP is the tool used to flawlessly animate objects within that scene (e.g., animating the camera pan or a model's rotation).
 
----
+<br>
+<br>
+<br>
 
 ## **GSAP vs. CSS**. _Why Control Matters_
 Pure CSS is fast and works well for simple, declarative effects. But once your animation needs to be dynamic or synchronized, it hits a wall.
@@ -52,7 +56,9 @@ Pure CSS is fast and works well for simple, declarative effects. But once your a
   - **_CSS:_** Simple hovers, quick fades, and loading spinners.
   - **_GSAP:_** Complex sequences, dynamic interactions, and scroll-linked effects (ScrollTrigger).
 
----
+<br>
+<br>
+<br>
 
 ##  **CPU vs. GPU**. _The Performance Deep Dive_
 To achieve 60fps (a new frame every 16.7ms), we must respect the roles of the two main processors.
@@ -69,7 +75,9 @@ To achieve 60fps (a new frame every 16.7ms), we must respect the roles of the tw
 
 > **The GPU's Best Friend:** Operations like 3D rendering (WebGL) and combining pre-painted layers.
 
----
+<br>
+<br>
+<br>
 
 ## **The Critical Rendering Path**: _Where Performance is Lost_
 The browser has a fixed path to draw your page. Performance drops happen when you force it to repeat the slow steps.
@@ -80,15 +88,19 @@ The browser has a fixed path to draw your page. Performance drops happen when yo
 
 3. **Compositing**. The layers are merged together and displayed. **This is GPU-accelerated and fast.**
 
----
+<br>
+<br>
+<br>
 
 ## **CSS Optimization**: _Shifting the Load to the GPU_
 
----
+<br>
+<br>
 
 The golden rule: **Animate only properties that skip Layout and Paint.**
 
----
+<br>
+<br>
 
 ### ✖️The CPU Bottlenecks **(Avoid for Animation)**
 
@@ -122,7 +134,9 @@ You can give the GPU a head start by explicitly telling the browser which elemen
 
 ```
 
----
+<br>
+<br>
+<br>
 
 
 ## **Conclusion**
