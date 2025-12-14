@@ -1,5 +1,5 @@
 [![Natalia aka kolonatalie — a front-end developer in training](/assets/images/demo.gif)](https://kolonatalie.github.io/portfolio/)
-# Personal Portfolio Website — [A Front-End Showcase](https://kolonatalie.github.io/portfolio/)
+# Personal Portfolio Website — [Live Demo](https://kolonatalie.github.io/portfolio/)
 
 A modular, highly performant portfolio and blog platform built to demonstrate proficiency in modern web standards, accessibility, and robust tooling.
 
@@ -8,12 +8,12 @@ A modular, highly performant portfolio and blog platform built to demonstrate pr
 
 | | |
 | :--- | :--- |
-| **Core Languages** | **HTML5** (Semantic), **CSS3** (Native), **Pure JavaScript** (ES Modules) |
+| **Core Languages** | **HTML5**, **CSS3**, Vanilla **JavaScript** |
 | **Tooling & Quality** | **ESLint** (with Airbnb Base Config), **Stylelint** (with Recess Order), **http-server** |
 | **Architecture** | **CSS Custom Properties** (for a scalable design system), Kebab-Case Naming enforced by Stylelint |
 
 
-## Notable Features
+## Features
 
 * **Code Quality & Architecture:** Prioritized **semantic HTML5 tags** (`<nav>`, `<main>`, `<details>`) and explicit **ARIA attributes** (`aria-label`) for strong accessibility.
 
@@ -25,45 +25,40 @@ A modular, highly performant portfolio and blog platform built to demonstrate pr
     * **Adaptive Layout:** Employed `text-wrap: balance` and the **`clamp()`** function for fluid, adaptive text scaling and wrapping.
     * **Visual Techniques:** Features a **Radial Grid Background** (using `radial-gradient` + `mask`) and **Staged Animations** (via `@keyframes`) for enhanced visual appeal and perceived performance.
 
+## ⚙️ Project Setup and Scripts
 
-## Development & Quality
+### Prerequisites
 
-The project enforces code quality through rigorous linting:
+* **Node.js (v18+)**
+* **npm** installed on your system.
 
-* **Linting Scripts:** Custom `npm run lint:js` and `npm run lint:css` commands allow for one-step code validation.
-* **Code Style:** Uses `stylelint-config-recess-order` to enforce a standard CSS property order and `eslint-config-airbnb-base` for strict JavaScript standards.
-* **Build/Run:** Utilizes `http-server` for a fast local development environment.
+### Installation:
 
-### Local Setup
+**1. Clone the repository:**
 
-To run this project locally, clone the repository and use the included npm scripts:
+`git clone` [`https://github.com/kolonatalie/portfolio.git`](https://github.com/kolonatalie/portfolio.git)
 
+**2. Navigate to the project directory**
 ```bash
-# Clone the repository
-git clone [https://github.com/kolonatalie/portfolio.git](https://github.com/kolonatalie/portfolio.git)
-
-# Navigate to the project directory
 cd portfolio
-
-# Install dependencies (linters and server)
-npm install
-
-# Run the local server
-npm run start
 ```
 
-## 🔗 [Live Demo](https://kolonatalie.github.io/portfolio/)
+**3. Install Dependencies:** Installs all required Node.js packages (Sass, ESLint, Stylelint, Live Server, etc.).
+```bash
+npm install && npm start
+```
 
-[![Website Screenshot](/assets/images/screenshot.jpg)](https://kolonatalie.github.io/portfolio/)
+## 🔗 Connect with Me
 
-## 🤝 Open for Collaboration
-I’m not just looking for jobs — I’m open to **creative collaborations, learning projects, hackathons, and design-to-code partnerships.**
-If you enjoy mixing creativity with code, let’s connect.
+I'm always open to feedback, collaboration, and connecting with fellow developers.
 
-- **[LinkedIn](https://www.linkedin.com/in/kolonatalie/)** 
-- **[GitHub](https://github.com/kolonatalie)** 
-- **[Bluesky](https://bsky.app/profile/kolonatalie.bsky.social)**
-- **[Mastodon](https://mastodon.social/@kolonatalie)**
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-563D6F?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kolonatalie/)
+[![Discord Badge](https://img.shields.io/badge/Discord-8A62B3?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/prqvsDRdNk)
+[![X Badge](https://img.shields.io/badge/X-B575D4?style=for-the-badge&logo=x&logoColor=white)](https://x.com/dev_kolonatalie)
+[![Bluesky Badge](https://img.shields.io/badge/Bluesky-A575D4?style=for-the-badge&logo=bluesky&logoColor=white)](https://bsky.app/profile/kolonatalie.bsky.social)
+[![Mastodon Badge](https://img.shields.io/badge/Mastodon-704F91?style=for-the-badge&logo=mastodon&logoColor=white)](https://mastodon.social/@kolonatalie)
+[![GitHub Badge](https://img.shields.io/badge/GitHub-3D2B4F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kolonatalie)
+
 
 ## 📌 Note  
 This portfolio will continue to evolve as I improve my skills and experiment with new front-end technologies.
