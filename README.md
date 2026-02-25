@@ -1,6 +1,6 @@
-[![Natalia aka kolonatalie — Creative Developer](src/assets/images/demo.gif)](https://kolonatalie.github.io/portfolio/)
+[![Natalia aka kolonatalie — Creative Developer](src/assets/images/demo.gif)](https://kolonatalie.vercel.app)
 
-# Creative Developer Portfolio — [Live Demo](https://kolonatalie.github.io/portfolio/)
+# Creative Developer Portfolio — [Live Demo](https://kolonatalie.vercel.app)
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
@@ -9,7 +9,7 @@
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Sass (SCSS)](https://img.shields.io/badge/Sass(SCSS)-hotpink?style=for-the-badge&logo=sass&logoColor=white)
 
-A high-performance, motion-driven portfolio platform engineered with **React 18**, **TypeScript**, and **GSAP**. This project demonstrates the intersection of creative motion design and disciplined frontend engineering, achieving a **94+ Performance score** on Lighthouse.
+A high-performance, motion-driven portfolio platform engineered with **React 18**, **TypeScript**, and **GSAP**. 94+ Performance score on Lighthouse.
 
 > *Successfully migrated from a Vanilla JS implementation to a robust React + TypeScript architecture to improve scalability and maintainability.*
 
@@ -17,12 +17,12 @@ A high-performance, motion-driven portfolio platform engineered with **React 18*
 
 * **Centralized Animation Engine:** Developed a custom `useScrollReveal` hook using **GSAP ScrollTrigger**, featuring a data-driven system for staggered reveals and complex motion paths.
 * **Creative UX Elements:** Custom-built "Magnetic" components, high-end "Back to Top" navigation with **Lenis Smooth Scroll**, and interactive 3D configurator integration.
-* **Robust Architecture:** Scalable **SASS Modules (7-1 pattern)** with a centralized design system using CSS Variables and HSL color functions.
+* **Robust Architecture:** Scalable **SASS Modules (7-1 pattern)** with a centralized design system using CSS Variables.
 * **Type-Safe Excellence:** Strict TypeScript implementation across all components, hooks, and GSAP animation targets for maximum maintainability.
 * **Performance First:** Optimized asset delivery achieving a **94 Performance score** on Lighthouse.
 ![Lighthouse Score](/src/assets/images/lighthouse-score.webp)
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 src/
@@ -38,31 +38,23 @@ src/
 
 * **Core:** React 18, TypeScript 5, Vite
 * **Motion:** GSAP 3, @gsap/react, ScrollTrigger, Lenis (Smooth Scroll)
-* **Styles:** SASS Modules, OKLCH, PostCSS
+* **Styles:** SASS Modules, HSL, PostCSS
 * **Quality:** ESLint 9, Stylelint, Husky
 
 
-##  Installation
+## Installation
+```Bash
+# Clone the repository
+git clone https://github.com/kolonatalie/portfolio
 
-1.  **Clone the repository:**
-    
-    `git clone` [`https://github.com/kolonatalie/portfolio.git`](https://github.com/kolonatalie/portfolio.git)
+# Install dependencies
+npm install --legacy-peer-deps
 
-    ```bash
-    cd portfolio
-    ```
-
-2.  **Install:**
-    ```bash
-    npm install --legacy-peer-deps
-    ```
-    ***Note:** `--legacy-peer-deps` is required for ESLint 9 compatibility with some plugins.*
-
-3. **Initialize & Run:**
-    ```bash
-    git init && npx husky install
-    npm run dev
-    ```
+# Start development server
+git init && npx husky install
+npm run dev
+```
+> ***Note:** `--legacy-peer-deps` is required for ESLint 9 compatibility with some plugins.*
 
 
 ## Available Scripts
@@ -88,6 +80,6 @@ I'm always open to discussing creative technology, motion design, or potential c
 
 
 ## 📌 Note  
-This portfolio is a living lab where I experiment with Three.js, shaders, and advanced GSAP techniques. It evolves as I push the boundaries of what's possible on the web.
+This portfolio is a living lab where I experiment with advanced GSAP techniques, Three.js, and shaders. It evolves as I push the boundaries of what's possible on the web.
 
 ![Natalia aka kolonatalie — Creative Developer and Front-End engineer](src/assets/images/kolonatalie-banner-pic.jpg)
