@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Посилання на твій sitemap (якщо будеш його створювати пізніше)
 Sitemap: https://kolonatalie.vercel.app/sitemap.xml
