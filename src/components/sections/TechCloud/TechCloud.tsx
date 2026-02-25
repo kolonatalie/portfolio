@@ -111,6 +111,12 @@ const TechCloud = () => {
       );
     }
   };
+  const handleKeyDown = (e: React.KeyboardEvent, skillName: string, target: HTMLElement) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleToggle(skillName, target);
+    }
+  };
 
   return (
     <div ref={containerRef} className={styles.cloudContainer}>
@@ -125,7 +131,11 @@ const TechCloud = () => {
         >
           <Magnetic>
             <div
+            role="button"              // Кажемо браузеру, що це кнопка
+              tabIndex={0}
               onClick={(e) => handleToggle(skill.name, e.currentTarget)}
+              onKeyDown={(e) => handleKeyDown(e, skill.name, e.currentTarget)}
+              aria-expanded={activeSkill === skill.name}
               className={clsx(styles.tag, skill.level === 1 ? styles.tagBold : styles.tagReg)}
             >
               {skill.name}

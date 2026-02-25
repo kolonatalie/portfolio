@@ -1,0 +1,5 @@
+.blog {
+  @include flex-center(column);
+
+  min-height: 50vh;
+}

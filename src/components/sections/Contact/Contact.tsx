@@ -216,7 +216,7 @@ const Contact = () => {
           className={styles.successMessage}
           aria-live="polite"
         >
-          <h2>thanks! <br />i'll get back to you soon</h2>
+          <h2>thanks! <br />I'll get back to you soon</h2>
           <p>Just let me finish my morning coffee</p>
           <Button variant="secondary" onClick={() => setStatus('idle')} >
             Send another message

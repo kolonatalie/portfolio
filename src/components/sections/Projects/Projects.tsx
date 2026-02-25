@@ -98,7 +98,7 @@ const Projects = () => {
   }, { scope: projectsRef });
 
   const handleProjectClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
-    if (link === "/") {
+    if (link === "/" || link === import.meta.env.BASE_URL) {
       e.preventDefault();
       lenis?.scrollTo(0, { duration: 1.5 });
     }
@@ -162,12 +162,12 @@ const Projects = () => {
           <Magnetic>
             <Button
               variant="secondary"
-              href="https://github.com/kolonatalie/frontend-practice-projects"
+              href="https://github.com/kolonatalie"
               target="_blank"
               title="gitHub"
               className={styles.ctaBtn}
             >
-              View code
+              See more on GitHub
             </Button>
           </Magnetic>
           <Magnetic>

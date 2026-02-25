@@ -55,11 +55,21 @@ const Reviews = () => {
     animateTransition(targetIndex, direction);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') {
+      handlePrev();
+    } else if (e.key === 'ArrowRight') {
+      handleNext();
+    }
+  };
+
   return (
     <section
       ref={reviewsRef}
       className={styles.reviews}
       id="reviews"
+      onKeyDown={handleKeyDown}
+      tabIndex={-1}
     >
       <div
         className={clsx(styles.reviewsWrapper, "revealItem")}
@@ -84,7 +94,11 @@ const Reviews = () => {
             <ChevronRight />
           </button>
         </div>
-        <div className={styles.reviewContent} ref={quoteRef}>
+        <div
+          className={styles.reviewContent}
+          ref={quoteRef}
+          aria-live="polite"
+        >
           <p className={styles.quoteText}>{text}</p>
           <div className={styles.authorInfo}>
             <p className={styles.authorName}>{name}</p>

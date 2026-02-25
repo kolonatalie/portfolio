@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -24,7 +24,7 @@ const Header = () => {
     const navItems = [q('ul li'), q(`.${styles.smartphone}`)];
 
     const tl = gsap.timeline({
-      paused: true, 
+      paused: true,
       defaults: { ease: 'power2.out', duration: 0.4 }
     });
 
@@ -63,6 +63,19 @@ const Header = () => {
     }
   }, { scope: container, dependencies: [isOpen] });
 
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    closeMenu();
+
+    if (isHomePage) {
+      e.preventDefault();
+      const element = document.querySelector(target);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header ref={container}>
       <nav>
@@ -94,16 +107,39 @@ const Header = () => {
           >
             <ul className={styles.navlinks}>
               <li>
-                <a href="#projects" onClick={closeMenu}>projects</a>
+                <Link
+                  to="/#projects"
+                  onClick={(e) => handleNavLinkClick(e, '#projects')}
+                >
+                  projects
+                </Link>
               </li>
               <li>
-                <a href="#about" onClick={closeMenu}>about</a>
+                <Link
+                  to="/#about"
+                  onClick={(e) => handleNavLinkClick(e, '#about')}
+                >
+                  about
+                </Link>
               </li>
               <li>
-                <a href="#contact" onClick={closeMenu}>contact</a>
+                <Link
+                  to="/#contact"
+                  onClick={(e) => handleNavLinkClick(e, '#contact')}
+                >
+                  contact
+                </Link>
               </li>
               <li>
-                <a href="blog/" target="_blank" onClick={closeMenu}>blog</a>
+                <Link
+                  to="/blog"
+                  onClick={() => {
+                    closeMenu();
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  blog
+                </Link>
               </li>
             </ul>
             <SocialLinks

@@ -103,6 +103,21 @@
   align-self: center;
 }
 
+.navBtn, .dot {
+  cursor: pointer;
+  outline: none; 
+  transition: transform 0.3s ease, background-color 0.3s ease, outline 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid $clr-accent;
+    outline-offset: calc($space-xs / 2);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
 .dot {
   width: $space-sm;
   height: $space-sm;
@@ -117,6 +132,11 @@
   &:active {
     background-color: rgba($clr-accent, 0.5);
     border: none;
+    transform: scale(1.2);
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
     transform: scale(1.2);
   }
 

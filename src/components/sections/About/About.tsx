@@ -144,6 +144,7 @@ const About = () => {
         />
       </div>
       <h2 className="revealItem" data-animation="fade">tech stack</h2>
+      <p className={styles.subtitle}>Click a skill to view proficiency</p>
       <div className={styles.skills}>
         <TechCloud />
       </div>

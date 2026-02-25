@@ -1,5 +1,5 @@
-import portfolioImg from '@/assets/images/developer-portfolio-kolonatalie2.webp';
-import sofaImg from '@/assets/images/3d-configurator2.webp';
+import portfolioImg from '@/assets/images/developer-portfolio-kolonatalie.webp';
+import sofaImg from '@/assets/images/3d-configurator.webp';
 import starterImg from '@/assets/images/starter-kit.webp';
 import shopImg from '@/assets/images/e-commerce.webp';
 

@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useMemo, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 import { ArrowDown } from '../../ui/Icons';
 import Button from '../../ui/Button/Button';
@@ -16,7 +17,7 @@ const Home = () => {
   const animatedHeadline = useMemo(() => {
     const text = "turning creativity into clean, functional code";
     return text.split(" ").map((word, i) => (
-      <span key={i} className="word" style={{ display: 'inline-block', whiteSpace: 'nowrap'}}>
+      <span key={i} className="word" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
         {word.split("").map((char, j) => (
           <span key={j} className="char" style={{ display: 'inline-block' }}>
             {char}
@@ -77,46 +78,49 @@ const Home = () => {
     <section ref={container} className={styles.home}>
       <div className={styles.homeWrapper}>
         <div className={styles.heroText}>
-        <p className={styles.headliner}>{animatedHeadline}</p>
-        <h1>Natalie — Creative Developer & Front-End Engineer</h1>
-      </div>
-      <div className={styles.mainInfo}>
-        <div className={styles.bio}>
-          <p>
-            Blending years of AR and design expertise with modern frontend engineering.
-            I build high-end digital experiences where motion meets performance,
-            and every interaction feels intentional.
-            <br />
-            Currently focused on <a className={styles.textLink} href="#projects">interactive 3D</a> and
-            <a className={styles.textLink} href="#contact"> accessible web applications.</a>
-          </p>
+          <p className={styles.headliner}>{animatedHeadline}</p>
+          <h1>Natalie — Creative Developer & Front-End Engineer</h1>
         </div>
-        <div>
-          <ul className={styles.social}>
-            <li>gitHub: <a href="https://github.com/kolonatalie/frontend-practice-projects" target="_blank" rel="noopener noreferrer">front-end
-              projects</a></li>
-            <li>recent: <a href="blog/" target="_blank" rel="noopener noreferrer">
-              Messenger-like blog</a></li>
+        <div className={styles.mainInfo}>
+          <div className={styles.bio}>
+            <p>
+              Blending years of AR and design expertise with modern frontend engineering.
+              I build high-end digital experiences where motion meets performance,
+              and every interaction feels intentional.
+              <br />
+              Currently focused on <a className={styles.textLink} href="#projects">interactive 3D</a> and
+              <a className={styles.textLink} href="#contact"> accessible web applications.</a>
+            </p>
+          </div>
+          <div>
+            <ul className={styles.social}>
+              <li>
+                code: <a href="https://github.com/kolonatalie" target="_blank" rel="noopener noreferrer">curated creative repos
+                </a>
+              </li>
+              <li>writing: <Link to="/blog">
+                tech blog on motion</Link>
+              </li>
 
-            <NowPlaying />
+              <NowPlaying />
 
-          </ul>
-          <Magnetic>
-            <Button
-              variant="secondary"
-              href="#contact"
-              className={styles.cta}
-            >
-              Let’s collaborate
-            </Button>
-          </Magnetic>
+            </ul>
+            <Magnetic>
+              <Button
+                variant="secondary"
+                href="#contact"
+                className={styles.cta}
+              >
+                Let’s collaborate
+              </Button>
+            </Magnetic>
+          </div>
         </div>
-      </div>
-      <div className={styles.arrowDown}>
-        <a href="#projects">
-          <ArrowDown className={styles.arrowDownStyle} />
-        </a>
-      </div>
+        <div className={styles.arrowDown}>
+          <a href="#projects">
+            <ArrowDown className={styles.arrowDownStyle} />
+          </a>
+        </div>
       </div>
     </section>
   );

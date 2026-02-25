@@ -4,7 +4,6 @@
 body {
   @include flex-center(column, center, center);
 
-  height: 100vh;
   font-family: $font-sans;
   font-size: $font-size-base;
   font-weight: 400;
@@ -83,4 +82,14 @@ section {
     padding: 0 $space-lg;
     margin: 0 auto calc($space-xxl * 2.2);
   }
+}
+
+:focus-visible {
+  outline: 1px solid $clr-accent; 
+  outline-offset: 4px;
+  transition: outline-offset 0.2s ease;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
