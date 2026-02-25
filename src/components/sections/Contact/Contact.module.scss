@@ -1,0 +1,146 @@
+.accent {
+  @include accent-text;
+}
+
+.subtitle {
+  @include subtitle-style;
+}
+
+.textLink {
+  @include link;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: $card-lg;
+  margin: 0 auto;
+
+  .submitBtn {
+    align-self: center;
+    min-height: $space-xxl;
+    color: $clr-secondary;
+
+    @include screen(tablet) {
+      align-self: flex-end;
+    }
+  }
+}
+
+.formGroup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: $space-lg;
+
+  &:focus-within {
+    label {
+      color: $clr-primary;
+      transition: color $transition-base;
+    }
+  }
+
+  label {
+    margin-bottom: $space-xs;
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    min-height: $space-xl;
+    font-family: $font-mono;
+    font-weight: 400;
+    color: $clr-secondary;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba($clr-grey, 0.3);
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: $clr-grey;
+      opacity: 0.5;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+        transition: opacity $transition-base;
+      }
+    }
+
+    &:-webkit-autofill {
+      color: $clr-grey !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      transition: background-color 0s 99999s, color 0s 99999s !important;
+
+      &:hover,
+      &:focus {
+        color: $clr-grey !important;
+        background-color: transparent !important;
+        background-image: none !important;
+      }
+    }
+  }
+
+  &:has(input:not(:placeholder-shown)),
+  &:has(textarea:not(:placeholder-shown)) {
+    label {
+      color: $clr-primary-dark;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    min-width: $card-sm;
+    max-width: $card-lg;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background: linear-gradient(to right,
+        $clr-primary 70%,
+        $clr-accent );
+    transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  &:focus-within::after {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: 0;
+  font-family: $font-mono;
+  font-size: calc($font-size-base / 1.25);
+  color: $clr-error;
+  opacity: 0.5;
+  transform: translateY(100%);
+}
+
+.invalidInput {
+  border-bottom-color: $clr-error !important;
+}
+
+.successMessage {
+  @include flex-center(column);
+
+  min-height: $card;
+  margin: 0 auto;
+  text-align: center;
+
+  p {
+    @include subtitle-style;
+  }
+}

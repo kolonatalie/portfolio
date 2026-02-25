@@ -1,0 +1,149 @@
+.reviewsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  @include screen(tablet) {
+    text-align: center;
+  }
+}
+
+.subtitle {
+  @include subtitle-style;
+
+  margin-bottom: $space-xs;
+}
+
+.description {
+  margin-bottom: 2rem;
+  color: $clr-grey;
+}
+
+.buttonContainer {
+  display: flex;
+  column-gap: $space-xxl;
+  align-self: center;
+  margin-bottom: $space-xxl;
+}
+
+.navBtn {
+  @include flex-center;
+
+  width: $icon-lg;
+  height: $icon-lg;
+  color: $clr-primary;
+  background: transparent;
+  border: 1px solid rgba($clr-primary, 0.5);
+  border-radius: 50%;
+  transition: all $transition-base;
+
+  &:hover,
+  &:active {
+    color: $clr-accent;
+    border-color: $clr-accent;
+    transform: scale(1.1);
+  }
+}
+
+.reviewContent {
+  align-self: center;
+  width: 100%;
+  max-width: $card-md;
+  height: 22rem;
+  will-change: transform, opacity;
+  
+  @include screen(tablet) {
+    max-width: $card-lg;
+    height: 20rem;
+  }
+}
+
+.quoteText {
+  position: relative;
+  margin-bottom: $space-lg;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.6;
+  text-align: left;
+  text-wrap: wrap;
+
+  &::before {
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 6rem;
+    line-height: 0.9;
+    content: '"';
+    opacity: 0.1;
+  }
+}
+
+.authorInfo {
+  @include flex-center(column);
+
+  font-family: $font-mono;
+
+  .authorName {
+    margin: 0;
+    color: $clr-accent;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-base;
+  }
+
+  .authorCountry {
+    color: $clr-grey;
+  }
+}
+
+.pagination {
+  @include flex-center;
+  
+  gap: $space-sm;
+  align-self: center;
+}
+
+.dot {
+  width: $space-sm;
+  height: $space-sm;
+  padding: 0;
+  margin: 0 $space-xs;
+  background: transparent;
+  border: 2px solid rgba($clr-primary, 0.3);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:hover,
+  &:active {
+    background-color: rgba($clr-accent, 0.5);
+    border: none;
+    transform: scale(1.2);
+  }
+
+  @include screen(tablet) {
+    width: $space-xs;
+    height: $space-xs;
+    margin: 0;
+    background-color: rgba($clr-primary, 0.2);
+    border: none;
+  }
+}
+
+.activeDot {
+  width: $icon;
+  height: $space-xs;
+  margin: 0 -0.5rem;
+  background-color: $clr-accent;
+  border: 1px solid $clr-accent;
+  border-radius: $radius-xl;
+
+  &:hover,
+  &:active {
+    background-color: $clr-accent;
+  }
+
+  @include screen(tablet) {
+    height: calc($space-xs / 2);
+    margin: 0;
+  }
+}

@@ -1,0 +1,47 @@
+.socialMedia {
+  height: 100%;
+
+  @include flex-center(row, space-between, center);
+
+  li {
+    margin: 0 $space-sm;
+  }
+
+  a {
+    display: inline-block;
+    margin: 0;
+    line-height: 0;
+    color: $clr-primary;
+  }
+
+  @include screen(tablet) {
+    li {
+      margin: 0 $space-lg 0 0;
+    }
+  }
+}
+
+.socialIcon {
+  width: $icon;
+  height: $icon;
+  fill: currentcolor;
+  transition: transform $transition-base;
+
+  &:hover {
+    color: $clr-secondary;
+    transform: scale(1.2);
+  }
+
+  @include screen(tablet) {
+    width: $icon-sm;
+    height: $icon-sm;
+    fill: currentcolor;
+    transition: transform $transition-base;
+  }
+}
+
+.smartphone {
+  @include screen(tablet) {
+    display: none;
+  }
+}

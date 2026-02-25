@@ -1,0 +1,257 @@
+.about {
+  color: $clr-grey;
+  text-wrap: wrap;
+}
+
+.accent {
+  @include accent-text;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+
+
+  h2 {
+    margin-bottom: $space-xs;
+
+    .word {
+      height: 100%;
+      min-height: 30px;
+      overflow: hidden;
+    }
+  }
+
+  div {
+    align-self: flex-start;
+  }
+
+  @include screen(tablet) {
+    flex-direction: row-reverse;
+
+    div {
+      align-self: center;
+    }
+  }
+}
+
+.nameTitle,
+.jobTitle {
+  min-height: 30px;
+  overflow: hidden; 
+  font-kerning: none;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.storyImg {
+  @include flex-center;
+
+  position: relative;
+  width: 100%;
+
+  img,
+  .bubble {
+    width: 90%;
+    max-width: $card;
+    aspect-ratio: 1 / 1;
+  }
+
+  img {
+    object-fit: cover;
+    border-radius: 100%;
+    shape-outside: circle()
+  }
+
+  @include screen(tablet) {
+    width: 35%;
+    margin: 0 $space-xl $space-xl 0;
+  }
+}
+
+.bubble {
+  position: absolute;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bubbleTrigger {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  background: rgba($clr-black, 0.5);
+  border: none;
+  border-radius: 50%;
+
+  button {
+    @include flex-center;
+
+    width: $icon-lg;
+    height: $icon-lg;
+    padding: 0.5rem;
+    font-size: calc($font-size-base * 1.25);
+    font-weight: 800;
+    color: $clr-primary;
+  }
+
+  span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover,
+    &:active {
+      transform: scale(1.2) rotate(10deg);
+    }
+  }
+}
+
+.closeBubble {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 1.2rem;
+  color: $clr-primary;
+  background: none;
+  border: none;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.speechBubble {
+  position: relative;
+  right: 0;
+  bottom: -100%;
+  z-index: $z-modal;
+  width: 100%;
+  padding: $space-md;
+  overflow: hidden;
+  font-family: $font-mono;
+  color: $clr-grey;
+  background: $clr-black;
+  border-radius: $radius-xl;
+  box-shadow:
+    0 3.8rem 2rem -4.5rem $clr-primary-dark,
+    0 4rem 3rem -2.5rem $clr-black,
+  ;
+
+  p {
+    margin: 0;
+  }
+
+  strong {
+    font-weight: 600;
+    color: $clr-secondary;
+  }
+}
+
+.subtitle {
+  @include subtitle-style;
+}
+
+.storyBio {
+  @include flex-center(column);
+
+  margin-bottom: $space-lg;
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+.textLink {
+  @include link;
+}
+
+.quote {
+  width: 80%;
+  margin: $space-xl auto $space-xxl;
+  font-size: clamp(1.25rem, 2.8vw, 1.54rem);
+  font-weight: 500;
+  line-height: clamp(1.9rem, 4.2vw, 2.3rem);
+  color: $clr-secondary;
+
+  &::before {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-right: -2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 6rem;
+    line-height: 0;
+    color: $clr-grey;
+    content: "\"";
+    opacity: 0.7;
+  }
+
+  &::after {
+    position: relative;
+    top: 0;
+    left: 0.5rem;
+    font-weight: 700;
+    color: $clr-grey;
+    content: "\"";
+    opacity: 0.7;
+  }
+
+  @include screen(tablet) {
+    width: 60%;
+    margin: $space-xl auto;
+  }
+}
+
+.socialMedia {
+  margin: 0 auto calc($space-xxl * 1.5);
+
+  li {
+    margin-right: $space-lg;
+  }
+
+  @include screen(tablet) {
+    align-self: center;
+    margin: $space-md 0 $space-xxl;
+
+    li {
+      margin-right: $space-xxl;
+    }
+  }
+}
+
+.skills {
+  @include flex-center(column);
+
+  width: 100%;
+  height: auto;
+}
+
+.ctaBtn {
+  align-self: center;
+  margin-top: $space-xl;
+
+  @include screen(tablet) {
+    align-self: flex-end;
+    margin-right: 0.75rem;
+  }
+}

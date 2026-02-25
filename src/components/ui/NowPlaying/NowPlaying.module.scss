@@ -1,0 +1,35 @@
+.nowPlaying {
+  display: flex;
+}
+
+.statusLabel {
+  display: flex;
+  gap: $space-xs;
+  align-items: center;
+}
+
+.pulseDot {
+  display: inline-block;
+  width: $space-xs;
+  height: $space-xs;
+  background-color: #ff4b4b;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgb(255 75 75);
+}
+
+.running {
+  display: inline-flex;
+  width: 17ch;
+  overflow: hidden;
+  text-align: left;
+}
+
+.running>span {
+  animation: marquee 8s linear 1.5s infinite;
+}
+
+@keyframes marquee {
+  to {
+    translate: -51%;
+  }
+}

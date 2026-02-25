@@ -1,0 +1,34 @@
+.btn {
+  position: fixed;
+  right: $space-xs;
+  bottom: $space-xl;
+  z-index: $z-modal;
+  width: $icon-lg; 
+  height: $icon-lg;
+  padding: calc($space-xs * 1.8);
+  visibility: hidden;
+  background-color: color-mix(in srgb, $clr-primary-dark, transparent 50%);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.75rem $clr-black;
+  opacity: 0;
+  transition: background-color $transition-base;
+  will-change: transform;
+
+  @include flex-center;
+
+  &:hover {
+    background-color: $clr-primary-dark;
+
+    .chevronUpIcon {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.chevronUpIcon {
+  width: $icon;
+  height: $icon;
+  color: $clr-secondary;
+  transition: transform $transition-base;
+}

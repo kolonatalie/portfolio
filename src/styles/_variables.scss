@@ -1,0 +1,87 @@
+// --- Colors ---
+$clr-primary: hsl(270deg 100% 77%);
+$clr-secondary: hsl(0deg 0% 100%);
+$clr-primary-dark: color-mix(in srgb, $clr-primary, black 30%);
+$clr-accent: hsl(166deg 100% 70%);
+$clr-bg: hsl(0deg 0% 10%);
+$clr-text: hsl(206deg 36% 9%);
+$clr-white: hsl(0deg 0% 100%);
+$clr-black: hsl(0deg 0% 0%);
+$clr-grey: hsl(0deg 0% 65%);
+$clr-error: hsl(337deg 100% 51%);
+
+// --- Shadows --- 
+$light-shadow: 0 5px 15px hsla(0deg 0% 0% / 0.1);
+$dark-shadow: 0 10px 25px hsla(0deg 0% 0% / 0.2);
+$strong-shadow: 0 40px 40px rgb(0 0 0 / 60);
+$brand-shadow: 0 0.05rem 0.75rem $clr-black;
+
+// --- Fonts --- 
+$font-heading: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+$font-sans: 'Montserrat', 'Montserrat-Fallback', 'Arial', sans-serif;
+$font-mono: "Source Code Pro", 'Courier New', 'Courier', monospace;
+$font-size-base: 1rem;
+$line-height-base: 1.7rem;
+$letter-spacing-base: 0.05rem;
+
+// --- Icons --- 
+$icon-xs: 10px;
+$icon-sm: 18px;
+$icon: 32px;
+$icon-md: 40px;
+$icon-lg: 50px;
+
+// --- Cards ---
+$card-xs: 150px;
+$card-sm: 300px;
+$card: 400px;
+$card-md: 550px;
+$card-lg: 700px;
+
+// --- Layout ---
+$max-width-content: 1024px;
+$spacing-content: 800px;
+$spacing-gutter: 1.5rem;
+$spacing-max-content: calc(100vw - ($spacing-gutter * 2));
+$min-height-header: 50px;
+$block-height-xs: 100px;
+$block-height: 500px;
+
+// --- Spacing ---
+$space-xs: 0.5rem; // 8px
+$space-sm: 1rem; // 16px
+$space-md: 1.25rem; // 20px
+$space-lg: 1.5rem; // 24px
+$space-xl: 2.5rem; // 40px
+$space-xxl: 3rem; // 48px
+
+// --- Radius ---
+$radius: 0.5rem;
+$radius-smooth: 0.75rem;
+$radius-xl: 1rem;
+$radius-max: 6rem;
+
+// --- Z-Index ---
+$z-negative: -10;
+$z-deep: -1;
+$z-base: 1;
+$z-header: 100;
+$z-dropdown: 200;
+$z-modal: 1000;
+
+// --- Animations ---
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+
+// Export to CSS Variables
+:root {
+  --clr-primary: #{$clr-primary};
+  --clr-secondary: #{$clr-secondary};
+  --clr-secondary50: #{rgba($clr-secondary, 0.5)};
+  --clr-accent: #{$clr-accent};
+  --clr-bg: #{$clr-bg};
+  --clr-grey: #{$clr-grey};
+  --radius: #{$radius};
+  --max-width: #{$max-width-content};
+}

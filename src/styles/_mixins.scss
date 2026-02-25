@@ -1,0 +1,78 @@
+@use "variables" as *;
+@use 'sass:map';
+
+@mixin content($max-width: $max-width-content) {
+  width: 100%;
+  max-width: $max-width;
+  height: auto;
+  padding-right: $space-sm;
+  padding-left: $space-sm;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+$breakpoints: (
+  'tablet': 768px,
+  'desktop': 1024px,
+  'wide': 1440px
+);
+
+@mixin screen($device) {
+  $size: map.get($breakpoints, $device);
+
+  @if $size {
+    @media screen and (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @error "Unknown device: #{$device}.";
+  }
+}
+
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin glass {
+  background: oklch(100% 0 0deg / 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid oklch(100% 0 0deg / 0.2);
+}
+
+@mixin link {
+  color: $clr-primary;
+  text-decoration: none;
+  border-bottom: 1px solid $clr-primary-dark;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $clr-secondary;
+    background-color: $clr-primary-dark;
+    transition: color $transition-base, background $transition-base;
+  }
+}
+
+@mixin subtitle-style {
+  font-family: $font-mono;
+  font-size: clamp(0.95rem, 1vw, $font-size-base);
+  font-weight: 400;
+  line-height: clamp(1.5rem, 1.7vw, $line-height-base);
+  color: $clr-grey;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-base;
+}
+
+@mixin accent-text {
+  margin-bottom: 2rem;
+  font-family: $font-mono;
+  font-size: $font-size-base;
+  color: $clr-grey;
+
+  @include screen(tablet) {
+    margin-bottom: 3.5rem;
+  }
+}

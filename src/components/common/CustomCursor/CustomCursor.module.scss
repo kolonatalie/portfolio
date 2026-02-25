@@ -1,0 +1,43 @@
+.cursor,
+.cursorOutline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-modal + 10;
+  pointer-events: none;
+  border-radius: 50%;
+
+  // mix-blend-mode: difference;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+.cursor {
+  width: $icon-xs;
+  height: $icon-xs;
+  background-color: $clr-secondary;
+  backdrop-filter: blur(3px);
+  border:1px solid $clr-bg;
+}
+
+.cursorOutline {
+  width: $icon;
+  height: $icon;
+  background-color: transparent;
+  border: 1px solid rgba($clr-grey, 0.5);
+}
+
+:global {
+  body {
+    @media (pointer: fine) {
+      cursor: none;
+
+      a, 
+      button, 
+      [role="button"],
+      .magnetic-target {
+        cursor: none;
+      }
+    }
+  }
+}

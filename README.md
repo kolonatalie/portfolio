@@ -1,66 +1,93 @@
-[![Natalia aka kolonatalie — a front-end developer in training](/assets/images/demo.gif)](https://kolonatalie.github.io/portfolio/)
-# Personal Portfolio Website — [Live Demo](https://kolonatalie.github.io/portfolio/)
+[![Natalia aka kolonatalie — Creative Developer](src/assets/images/demo.gif)](https://kolonatalie.github.io/portfolio/)
 
-A modular, highly performant portfolio and blog platform built to demonstrate proficiency in modern web standards, accessibility, and robust tooling.
+# Creative Developer Portfolio — [Live Demo](https://kolonatalie.github.io/portfolio/)
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.dot.js&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Sass (SCSS)](https://img.shields.io/badge/Sass(SCSS)-hotpink?style=for-the-badge&logo=sass&logoColor=white)
+
+A high-performance, motion-driven portfolio platform engineered with **React 18**, **TypeScript**, and **GSAP**. This project demonstrates the intersection of creative motion design and disciplined frontend engineering, achieving a **94+ Performance score** on Lighthouse.
+
+> *Successfully migrated from a Vanilla JS implementation to a robust React + TypeScript architecture to improve scalability and maintainability.*
+
+## Key Highlights (2026 Update)
+
+* **Centralized Animation Engine:** Developed a custom `useScrollReveal` hook using **GSAP ScrollTrigger**, featuring a data-driven system for staggered reveals and complex motion paths.
+* **Creative UX Elements:** Custom-built "Magnetic" components, high-end "Back to Top" navigation with **Lenis Smooth Scroll**, and interactive 3D configurator integration.
+* **Robust Architecture:** Scalable **SASS Modules (7-1 pattern)** with a centralized design system using CSS Variables and HSL color functions.
+* **Type-Safe Excellence:** Strict TypeScript implementation across all components, hooks, and GSAP animation targets for maximum maintainability.
+* **Performance First:** Optimized asset delivery achieving a **94 Performance score** on Lighthouse.
+![Lighthouse Score](/src/assets/images/lighthouse-score.webp)
+
+## 📁 Project Structure
+
+```text
+src/
+├── assets/      # Optimized assets (WebP images, audio, fonts)
+├── components/  # Atomic UI (Buttons, Icons) & Layout (Header, Footer)
+├── data/        # Centralized project & experience metadata
+├── hooks/       # Custom engines: useScrollReveal, useSound, useFormValidation
+├── pages/       # Main page and blog page
+├── styles/      # Global SCSS (Sass 7-1: variables, mixins, reset)
+└── utils/       # Math helpers & animation constants
+````
+## Tech Stack
+
+* **Core:** React 18, TypeScript 5, Vite
+* **Motion:** GSAP 3, @gsap/react, ScrollTrigger, Lenis (Smooth Scroll)
+* **Styles:** SASS Modules, OKLCH, PostCSS
+* **Quality:** ESLint 9, Stylelint, Husky
 
 
-## Technology Stack
+##  Installation
 
-| | |
+1.  **Clone the repository:**
+    
+    `git clone` [`https://github.com/kolonatalie/portfolio.git`](https://github.com/kolonatalie/portfolio.git)
+
+    ```bash
+    cd portfolio
+    ```
+
+2.  **Install:**
+    ```bash
+    npm install --legacy-peer-deps
+    ```
+    ***Note:** `--legacy-peer-deps` is required for ESLint 9 compatibility with some plugins.*
+
+3. **Initialize & Run:**
+    ```bash
+    git init && npx husky install
+    npm run dev
+    ```
+
+
+## Available Scripts
+|  |  |
 | :--- | :--- |
-| **Core Languages** | **HTML5**, **CSS3**, Vanilla **JavaScript** |
-| **Tooling & Quality** | **ESLint** (with Airbnb Base Config), **Stylelint** (with Recess Order), **http-server** |
-| **Architecture** | **CSS Custom Properties** (for a scalable design system), Kebab-Case Naming enforced by Stylelint |
+|`npm run dev`| Starts Vite dev server at `http://localhost:3000` |
+|`npm run build`| Runs Type-check (`tsc`) and builds the project with Vendor Splitting (React, GSAP into separate chunks).|
+|`npm run preview`| Locally previews the production build|
+|`npm run lint`| Audits JS/TS and SCSS for errors.|
+|`npm run lint:fix` | Automatically fixes linting and styling issues.|
 
+---
 
-## Features
+## Connect with Me
 
-* **Code Quality & Architecture:** Prioritized **semantic HTML5 tags** (`<nav>`, `<main>`, `<details>`) and explicit **ARIA attributes** (`aria-label`) for strong accessibility.
-
-* **JavaScript Implementation:** Fully functional **reviews carousel** and **responsive navigation toggle** using pure JavaScript. Implemented a Messenger-like blog experience with **infinite scroll** and post reactions saved into **`localStorage`**.
-
-
-* **Advanced CSS/Design:**
-    * **Design System:** Utilized **Custom Properties (CSS Variables)** for colors, spacing, and typography.
-    * **Adaptive Layout:** Employed `text-wrap: balance` and the **`clamp()`** function for fluid, adaptive text scaling and wrapping.
-    * **Visual Techniques:** Features a **Radial Grid Background** (using `radial-gradient` + `mask`) and **Staged Animations** (via `@keyframes`) for enhanced visual appeal and perceived performance.
-
-## ⚙️ Project Setup and Scripts
-
-### Prerequisites
-
-* **Node.js (v18+)**
-* **npm** installed on your system.
-
-### Installation:
-
-**1. Clone the repository:**
-
-`git clone` [`https://github.com/kolonatalie/portfolio.git`](https://github.com/kolonatalie/portfolio.git)
-
-**2. Navigate to the project directory**
-```bash
-cd portfolio
-```
-
-**3. Install Dependencies:** Installs all required Node.js packages (Sass, ESLint, Stylelint, Live Server, etc.).
-```bash
-npm install && npm start
-```
-
-## 🔗 Connect with Me
-
-I'm always open to feedback, collaboration, and connecting with fellow developers.
+I'm always open to discussing creative technology, motion design, or potential collaborations.
 
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-563D6F?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kolonatalie/)
-[![Discord Badge](https://img.shields.io/badge/Discord-8A62B3?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/prqvsDRdNk)
-[![X Badge](https://img.shields.io/badge/X-B575D4?style=for-the-badge&logo=x&logoColor=white)](https://x.com/dev_kolonatalie)
+[![X Badge](https://img.shields.io/badge/X-8A62B3?style=for-the-badge&logo=x&logoColor=white)](https://x.com/dev_kolonatalie)
 [![Bluesky Badge](https://img.shields.io/badge/Bluesky-A575D4?style=for-the-badge&logo=bluesky&logoColor=white)](https://bsky.app/profile/kolonatalie.bsky.social)
 [![Mastodon Badge](https://img.shields.io/badge/Mastodon-704F91?style=for-the-badge&logo=mastodon&logoColor=white)](https://mastodon.social/@kolonatalie)
 [![GitHub Badge](https://img.shields.io/badge/GitHub-3D2B4F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kolonatalie)
 
 
 ## 📌 Note  
-This portfolio will continue to evolve as I improve my skills and experiment with new front-end technologies.
+This portfolio is a living lab where I experiment with Three.js, shaders, and advanced GSAP techniques. It evolves as I push the boundaries of what's possible on the web.
 
-![Natalia aka kolonatalie — a front-end developer in training](/assets/images/kolonatalie-banner-pic.jpg)
+![Natalia aka kolonatalie — Creative Developer and Front-End engineer](src/assets/images/kolonatalie-banner-pic.jpg)

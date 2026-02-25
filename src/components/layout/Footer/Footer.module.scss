@@ -1,0 +1,45 @@
+footer {
+  width: 100%;
+  height: auto;
+  min-height: $card-xs;
+
+  @include flex-center(column, space-between, center);
+
+  .accent {
+    @include accent-text;
+
+    margin: $space-xs;
+    text-align: center;
+  }
+}
+
+.circleIcon {
+  display: block;
+  width: $icon-md;
+  aspect-ratio: 1 / 1;
+  fill: $clr-primary;
+  stroke: $clr-bg;
+  stroke-width: 0.01rem;
+}
+
+.subtitle {
+  margin: $space-sm;
+
+  @include subtitle-style;
+}
+
+.textLink {
+  @include link;
+}
+
+.socialMedia {
+  li {
+    margin: $space-lg;
+  }
+}
+
+.footerCredits {
+  margin: $space-xs 0;
+  font-size: calc($font-size-base * 0.85);
+  color: $clr-grey;
+}

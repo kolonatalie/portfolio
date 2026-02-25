@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Посилання на твій sitemap (якщо будеш його створювати пізніше)
+Sitemap: https://kolonatalie.github.io/portfolio/sitemap.xml
