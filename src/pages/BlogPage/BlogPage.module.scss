@@ -1,5 +1,129 @@
-.blog {
+.container {
+  max-width: $card-lg;
+  padding: 0 $space-sm;
+  margin: 6rem auto;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  max-width: $card-lg;
+  padding: 0 $space-sm;
+  margin: 0 auto $space-lg;
+}
+
+.searchWrapper {
+  width: 100%;
+
+  .searchInput {
+    position: relative;
+    width: 100%;
+    padding: $space-xs $space-md;
+    color: $clr-secondary;
+    background: rgba($clr-white, 0.01);
+    border: 1px solid rgba($clr-grey, 0.1);
+    border-radius: $radius-smooth;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: $clr-primary;
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.typeGroup {
+  display: flex;
+  gap: $space-sm;
+  border-radius: $radius-smooth;
+
+  button {
+    @include flex-center;
+
+    width: $icon-md;
+    height: $icon-md;
+    font-size: $font-size-base;
+    line-height: 0;
+    color: $clr-primary;
+    border-radius: $radius-smooth;
+    transition: all $transition-slow;
+
+    svg {
+      width: $icon-sm;
+      height: $icon-sm;
+    }
+
+    &:hover {
+      color: $clr-secondary;
+      transform: scale(1.1);
+    }
+
+    &.active {
+      color: $clr-secondary;
+      background: rgba($clr-primary, 0.3);
+      border: 1px solid $clr-primary-dark;
+    }
+  }
+}
+
+.chatContainer {
+  width: 100%;
+}
+
+.emptyState {
   @include flex-center(column);
 
-  min-height: 50vh;
+  padding: $space-xxl $space-lg;
+  margin-top: $space-lg;
+  color: rgba($clr-white, 0.6);
+  text-align: center;
+  background: rgba($clr-white, 0.02);
+  border: 1px dashed rgba($clr-white, 0.1);
+  border-radius: $radius-xl;
+
+  .icon {
+    margin-bottom: $space-lg;
+  }
+
+  .radarIcon {
+    width: $icon-lg;
+    height: $icon-lg;
+    color: $clr-grey;
+    animation: signal-pulse 2.5s infinite ease-in-out;
+  }
+
+  .message {
+    margin-bottom: $space-xs;
+    font-size: $font-size-base;
+    font-weight: bold;
+    color: $clr-secondary;
+  }
+
+  .subMessage {
+    margin-bottom: $space-lg;
+    font-size: 0.85rem;
+    line-height: $line-height-compact;
+  }
+}
+
+@keyframes signal-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }

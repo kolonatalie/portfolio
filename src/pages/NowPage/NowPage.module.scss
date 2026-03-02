@@ -1,0 +1,102 @@
+.nowContainer {
+  max-width: $card-lg;
+  min-height: 100vh;
+  padding: 6rem $space-lg;
+  margin: 0 auto;
+}
+
+.header {
+  margin: $space-lg 0 0;
+
+  h1 {
+    margin-bottom: 0;
+    font-size: clamp(1.25rem, 2.8vw, 1.54rem);
+    line-height: clamp(1.9rem, 4.2vw, 2.3rem);
+    color: $clr-secondary;
+  }
+
+  .lastUpdated {
+    margin-bottom: 0;
+    color: $clr-grey;
+  }
+}
+
+.content {
+  position: relative;
+  padding-left: $space-lg;
+  margin-bottom: $space-xxl;
+}
+
+.timelineLine {
+  position: absolute;
+  top: $space-xs + 0.05rem;
+  left: 0;
+  z-index: 1;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      $clr-accent,
+      transparent, );
+  transform-origin: top;
+}
+
+.nowItem {
+  position: relative;
+  padding: 0;
+  margin: $space-xl 0;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .dot {
+    position: absolute;
+    top: 0.25rem;
+    left: -2.1rem;
+    z-index: 2;
+    width: $icon-xs;
+    height: $icon-xs;
+    background: $clr-accent;
+    border-radius: 50%;
+    box-shadow: 0 0 10px $clr-accent;
+    transform: translate(50%, 50%);
+  }
+
+  .category {
+    margin-bottom: $space-xs;
+    font-family: $font-mono;
+    font-size: clamp(1.25rem, 2.8vw, 1.5rem);
+    color: $clr-grey;
+    letter-spacing: 0;
+  }
+
+  .text {
+    color: $clr-grey;
+    text-wrap: balance
+  }
+
+  .uaText {
+    font-family: $font-mono;
+    text-wrap: balance
+  }
+
+  @include screen(tablet) {
+    margin: $space-xl 0 $space-xxl;
+  }
+}
+
+.footer {
+  @include accent-text;
+  @include flex-center;
+
+  margin: 0;
+
+  p {
+    margin-bottom: 0;
+    text-align: center
+  }
+
+  a {
+    @include link;
+  }
+}

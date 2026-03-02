@@ -85,7 +85,7 @@ const Home = () => {
           <div className={styles.bio}>
             <p>
               Blending years of AR and design expertise with modern frontend engineering.
-              I build high-end digital experiences where motion meets performance,
+              I build high-end web apps where motion meets performance,
               and every interaction feels intentional.
               <br />
               Currently focused on <a className={styles.textLink} href="#projects">interactive 3D</a> and

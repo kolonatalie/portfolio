@@ -1,0 +1,178 @@
+.container {
+  @include flex-center(column);
+
+  max-width: $card;
+  min-height: 100vh;
+  padding: $space-sm;
+  margin: 0 auto $space-xxl;
+  color: white;
+}
+
+.profile {
+  z-index: $z-dropdown;
+  width: 100%;
+  margin: $space-xxl 0 $space-xl;
+  text-align: center;
+
+  .avatar {
+    position: relative;
+    width: $icon-xxl;
+    height: $icon-xxl;
+    margin: 0 auto $space-sm;
+    transform: rotateX(15deg);
+    perspective: 1500px;
+    transform-style: preserve-3d;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 80%;
+      z-index: $z-base + 2;
+      width: auto;
+      height: 20%;
+      padding: $space-sm 0.75rem;
+      overflow: hidden;
+      font-family: $font-sans;
+      font-size: 0.85rem;
+      font-weight: bold;
+      line-height: 1;
+      color: $clr-bg;
+      text-wrap: balance;
+      content: 'hi!';
+      background: $clr-accent;
+      border-radius: 1rem 1rem 1rem 0;
+      box-shadow: 2px 2px 0 $clr-black;
+      transform: translate(-50%, -50%);
+
+      @include flex-center;
+    }
+
+
+    img {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .ringInner,
+    .ringOuter {
+      position: absolute;
+      inset: -15px;
+      pointer-events: none;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+    }
+
+    .ringInner {
+      z-index: 2;
+      border: 1px solid $clr-accent;
+      box-shadow: 0 0 20px rgba($clr-accent, 0.3);
+    }
+
+    .ringOuter {
+      z-index: 1;
+      border: 2px dashed rgba($clr-primary, 0.9);
+    }
+  }
+
+  .name {
+    min-height: $icon-sm;
+    margin: $space-xs auto;
+    font-size: calc($font-size-base * 1.3);
+    font-weight: bold;
+    color: $clr-primary;
+    text-transform: none;
+    letter-spacing: $letter-spacing-base;
+  }
+
+  .bio {
+    min-height: $icon;
+    margin: 0;
+    font-size: calc($font-size-base * 0.85);
+    line-height: 1.5;
+    color: $clr-grey;
+
+    span {
+      font-weight: bold;
+      color: $clr-secondary;
+    }
+  }
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  width: 100%;
+  margin: 0 0 $space-xl;
+
+  .linkItem {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+.metrics {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.metricsWrapper {
+  width: 100%;
+  padding: $space-sm $space-xs $space-xs;
+  margin: 0 0 $space-lg;
+  text-align: center;
+  background: rgba($clr-secondary, 0.01);
+  border: 1px solid rgba($clr-grey, 0.2);
+  border-radius: $radius-xl;
+  box-shadow: $brand-shadow;
+}
+
+.metricsTitle {
+  @include accent-text;
+
+  margin: $space-xl auto 0;
+  text-align: center;
+
+  a {
+    @include link;
+  }
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  row-gap: $space-sm;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.metricValue {
+  min-width: 60px;
+  min-height: 60px;
+  padding: $space-xs;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 2;
+  color: $clr-accent;
+  border: 1px solid $clr-accent;
+  border-radius: 50%;
+}
+
+.metricLabel {
+  font-size: calc($font-size-base * 0.85);
+  color: $clr-grey;
+}
+
+.metricsCTA {
+  width: 100%;
+  margin: $space-xs auto 0;
+}

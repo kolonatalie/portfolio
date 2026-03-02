@@ -1,8 +1,11 @@
 .btn {
   @include flex-center;
 
+  position: relative;
   width: 29ch;
+  height: $icon-lg;
   padding: $space-xs $space-sm;
+  overflow: hidden;
   font-family: $font-mono;
   font-size: $font-size-base;
   font-weight: 400;
@@ -20,7 +23,7 @@
   &:hover,
   &:active {
     box-shadow: 0 1.1rem 0.75rem -1rem $clr-primary,
-    0 0 1.5rem $clr-black,
+      0 0 1.5rem $clr-black,
     ;
     transform: scale(0.95);
   }
@@ -40,10 +43,27 @@
     background-color: transparent;
     border: 1px solid $clr-primary-dark;
 
+
     &:hover,
     &:active {
       background-color: transparent;
       border-color: $clr-primary;
+    }
+  }
+
+  &.outline {
+    color: $clr-accent;
+    background-color: transparent;
+    border: 1px solid $clr-accent;
+
+    &:hover,
+    &:active {
+      background-color: transparent;
+      border-color: $clr-accent;
+      box-shadow:
+        0 1.1rem 0.75rem -1rem $clr-accent,
+        0 0 1.5rem $clr-black,
+      ;
     }
   }
 }

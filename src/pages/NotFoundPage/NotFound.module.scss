@@ -1,0 +1,18 @@
+.content {
+  min-height: 80dvh;
+  margin-top: 6rem;
+  text-align: center;
+
+  @include flex-center(column);
+}
+
+.errorCode {
+  min-height: 100px;
+  margin-bottom: $space-md;
+  font-size: clamp(8rem, 20vw, 15rem);
+  line-height: 1;
+  color: $clr-accent;
+  text-shadow: 2px 0 $clr-primary, -2px 0 $clr-secondary;
+  user-select: none;
+  will-change: transform, opacity;
+}

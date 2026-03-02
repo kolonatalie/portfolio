@@ -1,0 +1,40 @@
+.reactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  height: $icon-lg;
+}
+
+.reactionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: $icon-md;
+  height: 100%;
+}
+
+.active {
+  .emoji {
+    color: $clr-accent;
+    filter: drop-shadow(0 0 10px $clr-accent);
+  }
+
+  .count {
+    font-weight: bold;
+    color: $clr-accent;
+  }
+}
+
+.emoji {
+  padding: 0 4px;
+  color: $clr-primary;
+
+  svg {
+    width: $icon-sm;
+    height: $icon-sm;
+  }
+}
+
+.count {
+  color: $clr-grey;
+}

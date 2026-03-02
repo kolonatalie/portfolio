@@ -131,7 +131,7 @@ const TechCloud = () => {
         >
           <Magnetic>
             <div
-            role="button"              // Кажемо браузеру, що це кнопка
+              role="button" 
               tabIndex={0}
               onClick={(e) => handleToggle(skill.name, e.currentTarget)}
               onKeyDown={(e) => handleKeyDown(e, skill.name, e.currentTarget)}

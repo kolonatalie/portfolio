@@ -5,7 +5,7 @@ import gsap from 'gsap';
 
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SocialLinks from '@/components/ui/SocialLinks/SocialLinks';
-import { CircleIcon } from '@/components/ui/Icons';
+import { CircleIcon, EnvelopeIcon } from '@/components/ui/Icons';
 import Button from '@/components/ui/Button/Button';
 import Magnetic from '@/components/common/Magnetic';
 import mainPhoto from '@/assets/images/kolonatalie-main-photo400.webp';
@@ -108,7 +108,7 @@ const About = () => {
                 onClick={toggleBubble}
                 aria-label="Read a message"
               >
-                <span>{isBubbleOpen ? <CircleIcon /> : '💜'}</span>
+                <span>{isBubbleOpen ? <CircleIcon /> : <EnvelopeIcon className={styles.chatIcon} />}</span>
               </button>
             </Magnetic>
             <div className={styles.speechBubble} ref={bubbleRef} style={{ display: 'none' }}>
@@ -127,8 +127,8 @@ const About = () => {
           I'm bridging the gap between high-end visual design and disciplined frontend engineering.
           With over 6 years of experience crafting AR effects and immersive digital experiences, I build interfaces with high-performance interactions that drive engagement.
           <br /><br />
-          My focus is on <strong>Creative Technology</strong>: leveraging GSAP, Three.js, and WebGL to create "wow" effects,
-          while maintaining a rock-solid foundation in <strong>React, TypeScript, and Semantic HTML</strong>.
+          My focus is on creative technology: leveraging <strong>GSAP, Three.js, and WebGL</strong> to create "wow" effects,
+          while maintaining a rock-solid foundation in <strong>React, TypeScript</strong>, and Semantic HTML.
           I ensure that complex animations never compromise <strong>SEO, accessibility, or page speed</strong>.
           <br /><br />
           I bring the same level of obsessive detail to every production-ready applications as I did to the portfolio you see today. Whether it's a micro-interaction or a large-scale application, my goal is to deliver clean, scalable code that feels as good as it looks.
@@ -143,8 +143,8 @@ const About = () => {
           data-stagger="true"
         />
       </div>
-      <h2 className="revealItem" data-animation="fade">tech stack</h2>
-      <p className={styles.subtitle}>Click a skill to view proficiency</p>
+      <h2 className={clsx(styles.techStack, "revealItem")} data-animation="fade">tech stack</h2>
+      <p className={styles.techSubtitle}>Click a skill to view proficiency</p>
       <div className={styles.skills}>
         <TechCloud />
       </div>

@@ -70,6 +70,10 @@ form {
       }
     }
 
+    &:focus-visible {
+      outline: none;
+    }
+
     &:-webkit-autofill {
       color: $clr-grey !important;
       background-color: transparent !important;

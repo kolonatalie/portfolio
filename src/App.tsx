@@ -4,28 +4,30 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
+import { initConsoleGreeting } from '@/utils/consoleGreeting';
+import ScrollToHash from '@/components/common/ScrollToHash';
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 import MainPage from './pages/MainPage/MainPage';
 import BlogPage from './pages/BlogPage/BlogPage';
+import LinksPage from './pages/LinksPage/LinksPage';
+import NowPage from './pages/NowPage/NowPage';
+import NotFound from './pages/NotFoundPage/NotFound';
+// import PageTransition from './components/layout/PageTransition';
 
 import SmoothScroll from './components/common/SmoothScroll';
 import CustomCursor from './components/common/CustomCursor/CustomCursor';
 
-const ScrollToHash = () => {
-  const { hash } = useLocation();
-  useEffect(() => {
-    if (hash) {
-      const element = document.getElementById(hash.replace('#', ''));
-      if (element) setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
-    }
-  }, [hash]);
-  return null;
-};
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 
 const App: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    initConsoleGreeting();
+  }, []);
+
   return (
     <>
       <CustomCursor />
@@ -33,12 +35,15 @@ const App: React.FC = () => {
         <ScrollToHash />
 
         <Header />
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<MainPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/go" element={<LinksPage />} />
+          <Route path="/now" element={<NowPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-        
+
       </SmoothScroll>
     </>
   );

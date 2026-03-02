@@ -1,8 +1,6 @@
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
-import { CircleIcon } from '@/components/ui/Icons';
 import SocialLinks from '@/components/ui/SocialLinks/SocialLinks';
 import BackToTop from '@/components/ui/BackToTop/BackToTop';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -18,15 +16,6 @@ const Footer = () => {
 
   return (
     <footer ref={footerRef} className={styles.footer}>
-      <Link
-        to="/"
-        aria-label="Go to Portfolio Homepage"
-        onClick={() => window.scrollTo(0, 0)}
-        className="revealItem"
-        data-animation="motion"
-      >
-        <CircleIcon className={styles.circleIcon} />
-      </Link>
       <p
         className={clsx("revealItem", styles.subtitle)}
         data-animation="fade"

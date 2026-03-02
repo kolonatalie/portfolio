@@ -21,8 +21,9 @@ $font-heading: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-seri
 $font-sans: 'Montserrat', 'Montserrat-Fallback', 'Arial', sans-serif;
 $font-mono: "Source Code Pro", 'Courier New', 'Courier', monospace;
 $font-size-base: 1rem;
+$line-height-compact: 1.5;
 $line-height-base: 1.7rem;
-$letter-spacing-base: 0.05rem;
+$letter-spacing-base: 0.02rem;
 
 // --- Icons --- 
 $icon-xs: 10px;
@@ -30,6 +31,8 @@ $icon-sm: 18px;
 $icon: 32px;
 $icon-md: 40px;
 $icon-lg: 50px;
+$icon-xl: 80px;
+$icon-xxl: 100px;
 
 // --- Cards ---
 $card-xs: 150px;

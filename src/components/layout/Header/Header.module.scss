@@ -199,7 +199,7 @@ header {
       transform-origin: center;
     }
 
-    @include screen(tablet){
+    @include screen(tablet) {
       padding: 0 $space-sm;
     }
   }
@@ -225,5 +225,67 @@ header {
 
   @include screen(tablet) {
     display: none;
+  }
+}
+
+.messengerHeader {
+  min-height: $min-height-header;
+  padding: 0 $space-sm;
+
+  @include flex-center(row, space-between, center);
+
+  @include screen(tablet) {
+    width: 100%;
+  }
+}
+
+.backBtn {
+  @include flex-center(row, start, center);
+
+  width: $icon-md;
+  height: $icon-md;
+  padding: $space-xs;
+}
+
+.arrowIcon {
+  width: $icon;
+  height: $icon;
+  color: $clr-primary;
+}
+
+.contactInfo {
+  @include flex-center(column);
+
+  height: $min-height-header;
+}
+
+.name {
+  @include subtitle-style;
+
+  margin: 0;
+  line-height: 1;
+  color: $clr-secondary;
+}
+
+.status {
+  margin: 0;
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  line-height: 0.8;
+  color: $clr-grey;
+}
+
+.linksHeader {
+  display: flex;
+  justify-content: flex-start;
+  padding: $space-xs $space-sm;
+
+  .logoLink {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .circleIcon {
+    fill: rgba($clr-primary, 0.5);
   }
 }

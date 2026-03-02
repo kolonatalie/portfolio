@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import Home from '@/components/sections/Home/Home';
+import SectionSkeleton from '@/components/ui/SectionSkeleton/SectionSkeleton';
 
 const Projects = lazy(() => import('@/components/sections/Projects/Projects'));
 const About = lazy(() => import('@/components/sections/About/About'));
@@ -11,16 +12,20 @@ const MainPage: React.FC = () => {
   return (
     <main>
       <Home />
-      <Suspense fallback={null}>
+
+      <Suspense fallback={<SectionSkeleton />}>
         <Projects />
       </Suspense>
-      <Suspense fallback={null}>
+
+      <Suspense fallback={<SectionSkeleton />}>
         <About />
       </Suspense>
-      <Suspense fallback={null}>
+
+      <Suspense fallback={<SectionSkeleton />}>
         <Reviews />
       </Suspense>
-      <Suspense fallback={null}>
+
+      <Suspense fallback={<SectionSkeleton />}>
         <Contact />
       </Suspense>
     </main>

@@ -34,7 +34,7 @@
   height: $icon-lg;
   color: $clr-primary;
   background: transparent;
-  border: 1px solid rgba($clr-primary, 0.5);
+  border: 2px solid rgba($clr-primary, 0.5);
   border-radius: 50%;
   transition: all $transition-base;
 
@@ -49,19 +49,19 @@
 .reviewContent {
   align-self: center;
   width: 100%;
-  max-width: $card-md;
+  max-width: $card-lg;
   height: 22rem;
   will-change: transform, opacity;
   
   @include screen(tablet) {
-    max-width: $card-lg;
     height: 20rem;
   }
 }
 
 .quoteText {
   position: relative;
-  margin-bottom: $space-lg;
+  width: 80%;
+  margin: 0 auto $space-lg;
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   line-height: 1.6;
   text-align: left;
@@ -69,13 +69,17 @@
 
   &::before {
     position: absolute;
-    top: -2rem;
-    left: -1rem;
+    top: 0;
+    left: -2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 6rem;
-    line-height: 0.9;
+    line-height: 0;
     content: '"';
     opacity: 0.1;
+  }
+
+  @include screen(tablet){
+    width: 90%;
   }
 }
 

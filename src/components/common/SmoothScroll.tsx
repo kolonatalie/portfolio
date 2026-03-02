@@ -8,7 +8,6 @@ interface SmoothScrollProps {
 }
 
 const SmoothScroll = ({ children }: SmoothScrollProps) => {
-
   const lenis = useLenis();
 
   useEffect(() => {
