@@ -9,7 +9,7 @@ import MessageItem from '@/components/blog/MessageItem/MessageItem';
 import Magnetic from '@/components/common/Magnetic';
 import Button from '@/components/ui/Button/Button';
 import { CameraVideoIcon, CardTextIcon, ImageIcon, RadarIcon } from '@/components/ui/Icons';
-import SEO from '@/components/common/SEO';
+import SetSeo from '@/components/common/SetSeo';
 
 import styles from './BlogPage.module.scss';
 
@@ -80,7 +80,7 @@ const BlogPage: React.FC = () => {
 
   return (
     <main className={styles.container}>
-      <SEO title="Blog" path="/blog" />
+      <SetSeo title="Blog" path="/blog" />
       <div className={styles.controls}>
         <div className={styles.searchWrapper}>
           <input 

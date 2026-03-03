@@ -4,8 +4,9 @@ import gsap from 'gsap';
 
 import Button from '@/components/ui/Button/Button';
 import avatar from '@/assets/images/kolonatalie-main-photo400.webp';
-import { BIO_LINKS, PAGESPEED_METRICS } from '@/data/links';
-import SEO from '@/components/common/SEO';
+import { BIO_LINKS} from '@/data/links';
+import SetSeo from '@/components/common/SetSeo';
+import EngineeringMetrics from '@/components/common/EngineeringMetrics/EngineeringMetrics';
 
 import styles from './LinksPage.module.scss';
 
@@ -17,7 +18,6 @@ const LinksPage = () => {
   const ringOuterRef = useRef<HTMLDivElement>(null);
 
   const links = BIO_LINKS;
-  const metrics = PAGESPEED_METRICS;
 
   useGSAP(() => {
     const tlRings = gsap.timeline({
@@ -90,26 +90,11 @@ const LinksPage = () => {
       },
       "-=0.75"
     );
-
-    metrics.forEach((metric, index) => {
-      gsap.to(`.metric-value-${index}`, {
-        duration: 2,
-        innerText: metric.value,
-        snap: { innerText: 1 },
-        ease: "power1.out",
-        delay: 1.5,
-        scrollTrigger: {
-          trigger: `.${styles.metricsWrapper}`,
-          start: "top 95%",
-        }
-      });
-    });
-
   }, { scope: containerRef });
 
   return (
     <main className={styles.container} ref={containerRef}>
-      <SEO title="Links" path="/go" />
+      <SetSeo title="Links" path="/go" />
       <section className={styles.profile}>
         <div className={styles.avatar} ref={avatarRef}>
           <div className={styles.ringInner} ref={ringInnerRef} />
@@ -136,17 +121,7 @@ const LinksPage = () => {
       </section>
 
       <section className={styles.metrics}>
-        <div className={styles.metricsWrapper}>
-          <div className={styles.metricsGrid}>
-            {metrics.map((metric, index) => (
-              <div key={metric.label} className={styles.metricItem}>
-                <span className={`metric-value-${index} ${styles.metricValue}`}>0</span>
-                <span className={styles.metricLabel}>{metric.label}</span>
-              </div>
-            ))}
-          </div>
-          <p className={styles.metricsTitle}>My portfolio on <a href='https://pagespeed.web.dev/analysis/https-kolonatalie-vercel-app/ouq4saig4j?form_factor=mobile' target="_blank" rel="noopener noreferrer">PageSpeed</a></p>
-        </div>
+        <EngineeringMetrics variant="compact" />
         <Button
           variant='outline'
           href='https://www.linkedin.com/in/kolonatalie/'

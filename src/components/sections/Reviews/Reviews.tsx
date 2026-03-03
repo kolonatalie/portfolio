@@ -55,22 +55,11 @@ const Reviews = () => {
     animateTransition(targetIndex, direction);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') {
-      handlePrev();
-    } else if (e.key === 'ArrowRight') {
-      handleNext();
-    }
-  };
-
   return (
     <section
       ref={reviewsRef}
       className={styles.reviews}
       id="reviews"
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      role="region"
       aria-label="Customer reviews carousel"
     >
       <div

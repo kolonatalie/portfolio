@@ -14,6 +14,7 @@ import popSound from '@/assets/sounds/bubble-pop.mp3';
 
 import styles from './About.module.scss';
 import { useSound } from '@/hooks/useSound';
+import ProductionStandards from '../ProductionStandards/ProductionStandards';
 
 
 const About = () => {
@@ -146,8 +147,15 @@ const About = () => {
           while maintaining a rock-solid foundation in <strong>React, TypeScript</strong>, and Semantic HTML.
           I ensure that complex animations never compromise <strong>SEO, accessibility, or page speed</strong>.
           <br /><br />
-          I bring the same level of obsessive detail to every production-ready applications as I did to the portfolio you see today. Whether it's a micro-interaction or a large-scale application, my goal is to deliver clean, scalable code that feels as good as it looks.
+          I bring the same level of obsessive detail to every production-ready applications as I did to the portfolio you see today. Whether it's a micro-interaction or a large-scale application, <strong>my goal is to deliver clean, scalable code</strong> that feels as good as it looks.
         </p>
+      </div>
+      <ProductionStandards />
+      <div
+        className={clsx(styles.storyBioQuote, "revealItem")}
+        data-animation="fade"
+        data-stagger="true"
+      >
         <p className={styles.quote}>
           For me, the web is a canvas for storytelling through code, where performance and creativity exist in perfect balance.
         </p>
@@ -158,11 +166,6 @@ const About = () => {
           data-stagger="true"
         />
       </div>
-      <h2 className={clsx(styles.techStack, "revealItem")} data-animation="fade">tech stack</h2>
-      <p className={styles.techSubtitle}>Click a skill to view proficiency</p>
-      <div className={styles.skills}>
-        <TechCloud />
-      </div>
       <Magnetic className={styles.ctaBtn} strength={0.2}>
         <Button
           variant="primary"
@@ -171,6 +174,11 @@ const About = () => {
           Let’s work together
         </Button>
       </Magnetic>
+      <h2 className={clsx(styles.techStack, "revealItem")} data-animation="fade">tech stack</h2>
+      <p className={styles.techSubtitle}>Click a skill to view proficiency</p>
+      <div className={styles.skills}>
+        <TechCloud />
+      </div>
     </section>
   );
 };

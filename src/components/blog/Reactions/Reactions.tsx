@@ -31,7 +31,8 @@ const Reactions: React.FC<ReactionsProps> = ({ postId }) => {
       duration: 0.3, 
       ease: "back.out(1.2)",
       yoyo: true, 
-      repeat: 1 
+      repeat: 1,
+      overwrite: 'auto', 
     }
   );
 });

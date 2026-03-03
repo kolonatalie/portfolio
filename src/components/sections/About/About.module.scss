@@ -1,4 +1,5 @@
 .about {
+  margin-bottom: $space-lg;
   color: $clr-grey;
   text-wrap: wrap;
 }
@@ -204,10 +205,9 @@
   @include subtitle-style;
 }
 
-.storyBio {
+.storyBio,
+.storyBioQuote {
   @include flex-center(column);
-
-  margin-bottom: $space-lg;
 
   strong {
     font-weight: bold;
@@ -221,12 +221,12 @@
 .quote {
   position: relative;
   width: 80%;
-  margin: $space-xl auto $space-xxl;
+  margin: $space-xl auto $space-xxl + $space-sm;
   font-size: clamp(1.25rem, 2.8vw, 1.54rem);
   font-weight: 500;
   line-height: clamp(1.9rem, 4.2vw, 2.3rem);
   color: $clr-secondary;
-  text-wrap: balance;
+  text-wrap: stable;
 
   &::before,
   &::after {
@@ -257,7 +257,7 @@
 }
 
 .socialMedia {
-  margin: 0 auto calc($space-xxl * 1.5);
+  margin: 0 auto $space-xxl;
 
   li {
     margin-right: $space-lg;
@@ -288,10 +288,11 @@
 
 .ctaBtn {
   align-self: center;
-  margin-top: $space-xl;
+  margin-bottom: $space-xxl + $space-sm;
 
   @include screen(tablet) {
     align-self: flex-end;
     margin-right: 0.75rem;
+    margin-bottom: $space-xxl * 2;
   }
 }

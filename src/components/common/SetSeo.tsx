@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 
-interface SEOProps {
+interface SetSeoProps {
   title: string;
   description?: string;
   path: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, path }) => {
+const SetSeo: React.FC<SetSeoProps> = ({ title, path }) => {
   const baseUrl = 'https://kolonatalie.vercel.app';
   const fullUrl = `${baseUrl}${path}`;
 
@@ -20,4 +20,4 @@ const SEO: React.FC<SEOProps> = ({ title, path }) => {
   );
 };
 
-export default SEO;
+export default SetSeo;

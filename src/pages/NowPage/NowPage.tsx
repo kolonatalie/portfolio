@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { NOW_DATA } from '@/data/nowData';
-import SEO from '@/components/common/SEO';
+import SetSeo from '@/components/common/SetSeo';
 
 import styles from './NowPage.module.scss';
 
@@ -46,7 +46,7 @@ const NowPage = () => {
 
   return (
     <main className={styles.nowContainer} ref={containerRef}>
-      <SEO title="Now" path="/now" />
+      <SetSeo title="Now" path="/now" />
       <section className={styles.header}>
         <h1 className={styles.title}>What I'm doing now</h1>
         <p className={styles.lastUpdated}>Last updated: March 2026</p>

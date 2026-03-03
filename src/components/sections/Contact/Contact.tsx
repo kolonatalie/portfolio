@@ -72,9 +72,6 @@ const Contact = () => {
         el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'
     );
 
-
-    // const inputs = Array.from(form.querySelectorAll('input, textarea')) as (HTMLInputElement | HTMLTextAreaElement)[];
-
     const invalidInputs = inputs.filter(input => !validate(input));
 
     if (invalidInputs.length > 0) {

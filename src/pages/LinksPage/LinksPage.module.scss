@@ -120,58 +120,6 @@
   margin: 0 auto;
 }
 
-.metricsWrapper {
-  width: 100%;
-  padding: $space-sm $space-xs $space-xs;
-  margin: 0 0 $space-lg;
-  text-align: center;
-  background: rgba($clr-secondary, 0.01);
-  border: 1px solid rgba($clr-grey, 0.2);
-  border-radius: $radius-xl;
-  box-shadow: $brand-shadow;
-}
-
-.metricsTitle {
-  @include accent-text;
-
-  margin: $space-xl auto 0;
-  text-align: center;
-
-  a {
-    @include link;
-  }
-}
-
-.metricsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  row-gap: $space-sm;
-}
-
-.metricItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-.metricValue {
-  min-width: 60px;
-  min-height: 60px;
-  padding: $space-xs;
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 2;
-  color: $clr-accent;
-  border: 1px solid $clr-accent;
-  border-radius: 50%;
-}
-
-.metricLabel {
-  font-size: calc($font-size-base * 0.85);
-  color: $clr-grey;
-}
-
 .metricsCTA {
   width: 100%;
   margin: $space-xs auto 0;

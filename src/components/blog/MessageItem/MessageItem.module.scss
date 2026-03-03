@@ -9,51 +9,26 @@
 
 .bubble {
 	position: relative;
+	display: block;
 	width: 100%;
 	height: auto;
 	min-height: $card-xs;
 	padding: $space-sm $space-md $space-xs;
+	margin: 0;
 	overflow: hidden;
+	font: inherit;
+	color: inherit;
+	text-align: left;
+	appearance: none;
+	background: $clr-bg;
+	border: none;
 	border-radius: $radius-xl;
 	box-shadow:
 		$brand-shadow,
 		0 0.5rem 1rem $clr-black,
 	;
 	opacity: 1;
-
-	&::before {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: -1;
-		width: 200%;
-		height: 200%;
-		content: '0';
-		background: linear-gradient(135deg, $clr-primary, transparent, $clr-primary);
-		transition: background 1s ease, transform 1s ease;
-		transform: translate(-50%, -50%);
-	}
-
-	&::after {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: -1;
-		width: calc(100% - 2px);
-		height: calc(100% - 2px);
-		content: '';
-		background: $clr-bg;
-		border-radius: $radius-xl;
-		transform: translate(-50%, -50%);
-	}
-
-	&:hover,
-	&:active {
-		&::before {
-			background: linear-gradient(135deg, $clr-accent, transparent, $clr-accent);
-			transform: translate(-50%, -50%) rotate(180deg);
-		}
-	}
+	will-change: transform;
 
 	@include screen(tablet) {
 		padding: $space-sm $space-xl $space-xs;
@@ -117,9 +92,17 @@
 	position: relative;
 	justify-self: flex-start;
 	width: 100%;
-	min-height: $card-sm;
 	margin: $space-xs 0 0;
+}
+
+.innerContent {
+	position: relative;
+	height: auto;
+	min-height: $card-sm;
 	overflow: hidden;
+	transform: translateZ(0);
+	will-change: height;
+	contain: paint;
 }
 
 .skeleton {
@@ -327,12 +310,12 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	z-index: $z-base;
 	width: 100%;
 	height: $icon-lg;
 	padding: $space-xs 0;
 	font-family: $font-mono;
 	font-size: 0.8rem;
-	color: $clr-primary;
 	text-align: center;
 	background: $clr-bg;
 	box-shadow:
@@ -340,9 +323,21 @@
 		0 -1rem 1rem $clr-bg,
 		0 -0.5rem 2rem $clr-bg,
 	;
+	transition: transform $transition-base;
 
-	span {
+	&:hover,
+	&:active {
+		transform: scale(1.1);
+
+		button {
+			color: $clr-secondary;
+		}
+	}
+
+	button {
 		display: inline-block;
+		color: $clr-primary;
+		transition: color $transition-base, transform $transition-base;
 		animation: bounce 2s infinite;
 	}
 }

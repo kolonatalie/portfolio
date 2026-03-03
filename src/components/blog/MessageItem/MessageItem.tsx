@@ -20,7 +20,8 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
   const contentWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let isMounted = true;
+    const isMounted = true;
+    const controller = new AbortController();
 
     const base = post.views;
     const min = base - 2 > 0 ? base - 2 : 0.5;
@@ -35,7 +36,7 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
       if (isMounted) setIsLoading(true);
     }, 0);
 
-    fetch(post.file)
+    fetch(post.file, { signal: controller.signal })
       .then(res => res.text())
       .then(text => {
         if (isMounted) {
@@ -43,11 +44,12 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
           setIsLoading(false);
         }
       })
-      .catch(() => {
-        if (isMounted) setIsLoading(false);
+      .catch(err => {
+        if (err.name === 'AbortError') return;
+        setIsLoading(false);
       });
 
-    return () => { isMounted = false; };
+    return () => controller.abort();
   }, [post.file, post.views]);
 
   useGSAP(() => {
@@ -62,10 +64,20 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
 
   useGSAP(() => {
     if (!contentWrapperRef.current) return;
+
+    const fullHeight = contentWrapperRef.current.scrollHeight;
+
     gsap.to(contentWrapperRef.current, {
-      height: isExpanded ? 'auto' : '100px',
-      duration: 0.5,
-      ease: 'power2.inOut',
+      height: isExpanded ? fullHeight : 300,
+      opacity: 1,
+      duration: 0.6,
+      ease: 'power3.inOut',
+      overwrite: true,
+      onComplete: () => {
+        if (isExpanded) {
+          gsap.set(contentWrapperRef.current, { height: 'auto' });
+        }
+      }
     });
   }, { dependencies: [isExpanded], scope: bubbleRef });
 
@@ -117,11 +129,6 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
       <div
         className={styles.bubble}
         ref={bubbleRef}
-        onClick={handleExpand}
-        onKeyDown={handleKeyDown}
-        role="button"
-        tabIndex={0}
-        aria-expanded={isExpanded}
       >
         <div className={styles.metaInfo}>
           <span className={styles.date}>{post.date}</span>
@@ -137,21 +144,33 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
           )}
         </div>
 
-        <div className={styles.contentWrapper} ref={contentWrapperRef}>
-          {isLoading ? (
-            <div className={styles.skeleton}>Typing...</div>
-          ) : (
-            <>
-              <MarkdownRenderer content={content} />
-              {!isExpanded && <div className={styles.gradientOverlay} />}
-            </>
-          )}
-
+        <div className={styles.contentWrapper} >
           {!isExpanded && !isLoading && (
             <div className={styles.showMore}>
-              <span>Read full post..</span>
+              <button
+                onClick={handleExpand}
+                onKeyDown={handleKeyDown}
+                aria-expanded={isExpanded}
+              >
+                Read full post..
+              </button>
             </div>
           )}
+
+          <div
+            ref={contentWrapperRef}
+            className={styles.innerContent}
+            {...(!isExpanded ? { 'inert': '' } : {})}
+          >
+            {isLoading ? (
+              <div className={styles.skeleton}>Typing...</div>
+            ) : (
+              <>
+                <MarkdownRenderer content={content} />
+                {!isExpanded && <div className={styles.gradientOverlay} />}
+              </>
+            )}
+          </div>
         </div>
 
         <div className={styles.footer}>
