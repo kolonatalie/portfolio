@@ -6,6 +6,7 @@ import MarkdownRenderer from '../../ui/MarkdownRenderer';
 import Reactions from '../Reactions/Reactions';
 import { IPost } from '@/types/blog';
 import { EyeIcon, SendIcon } from '@/components/ui/Icons';
+import { getCryptoRandom } from '@/utils/crypto';
 
 import styles from './MessageItem.module.scss';
 
@@ -26,7 +27,7 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
     const base = post.views;
     const min = base - 2 > 0 ? base - 2 : 0.5;
     const max = base + 2;
-    const randomValue = (Math.random() * (max - min) + min).toFixed(1);
+    const randomValue = (getCryptoRandom() * (max - min) + min).toFixed(1);
 
     setTimeout(() => {
       if (isMounted) setDisplayViews(`${randomValue}K`);
@@ -160,7 +161,7 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
           <div
             ref={contentWrapperRef}
             className={styles.innerContent}
-            {...(!isExpanded ? { 'inert': '' } : {})}
+            {...(isExpanded ? {} : { inert: '' })}
           >
             {isLoading ? (
               <div className={styles.skeleton}>Typing...</div>

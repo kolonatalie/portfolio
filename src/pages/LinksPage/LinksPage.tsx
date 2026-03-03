@@ -3,7 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 import Button from '@/components/ui/Button/Button';
-import avatar from '@/assets/images/kolonatalie-main-photo400.webp';
+import avatar from '@/assets/images/kolonatalie-main-photo175.webp';
 import { BIO_LINKS} from '@/data/links';
 import SetSeo from '@/components/common/SetSeo';
 import EngineeringMetrics from '@/components/common/EngineeringMetrics/EngineeringMetrics';

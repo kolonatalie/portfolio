@@ -29,7 +29,7 @@
 
   @include screen(tablet) {
     width: 100%;
-    max-width: $card-md;
+    max-width: $card-lg;
     padding-bottom: $space-xs;
   }
 }
@@ -43,9 +43,10 @@
   margin: $space-md auto;
 
   @include screen(tablet) {
+    flex-wrap: nowrap;
     justify-content: space-between;
     width: 100%;
-    max-width: $card-md;
+    max-width: $card-lg;
   }
 }
 
@@ -55,8 +56,9 @@
   min-height: $icon-lg;
   padding: $space-xs $space-sm;
   font-family: $font-mono;
-  font-size: 0.75rem;
-  text-transform: uppercase;
+  font-size: $font-size-base;
+  color: $clr-accent;
+  letter-spacing: $letter-spacing-base;
   background: rgba($clr-secondary, 0.01);
   border: 1px solid rgba($clr-grey, 0.2);
   border-radius: $radius;

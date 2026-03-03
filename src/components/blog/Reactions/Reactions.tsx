@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 import { HeartIcon, ThumbsUpIcon } from '@/components/ui/Icons';
+import { getCryptoRandom } from '@/utils/crypto';
 
 import styles from './Reactions.module.scss';
 
@@ -46,7 +47,7 @@ const Reactions: React.FC<ReactionsProps> = ({ postId }) => {
       const count = localStorage.getItem(`count-${postId}-${reaction.id}`);
       initialCounts[reaction.id] = count 
       ? Number.parseInt(count, 10) 
-      : Math.floor(Math.random() * 50);
+      : Math.floor(getCryptoRandom() * 50);
     });
 
     setTimeout(() => {
