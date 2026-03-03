@@ -8,7 +8,7 @@ const CustomCursor = () => {
   const isInitialMove = useRef(true);
 
   useEffect(() => {
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    const isTouch = globalThis.matchMedia("(pointer: coarse)").matches;
     if (isTouch) return;
 
     const cursor = dotRef.current;
@@ -61,10 +61,10 @@ const CustomCursor = () => {
       }
     };
 
-    window.addEventListener("mousemove", moveCursor);
+    globalThis.addEventListener("mousemove", moveCursor);
 
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      globalThis.removeEventListener("mousemove", moveCursor);
     };
   }, []);
 

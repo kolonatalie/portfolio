@@ -10,6 +10,8 @@ import Magnetic from '@/components/common/Magnetic';
 import styles from './Contact.module.scss';
 
 
+const EMAIL_PATTERN = String.raw`^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$`;
+
 const FIELD_CONFIG = [
   {
     id: 'name',
@@ -24,7 +26,7 @@ const FIELD_CONFIG = [
     label: "Email Address",
     type: 'email',
     placeholder: 'name@example.com',
-    pattern: "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$"
+    pattern: EMAIL_PATTERN
   },
   {
     id: 'topic',
@@ -65,7 +67,14 @@ const Contact = () => {
     e.preventDefault();
     const form = e.currentTarget;
 
-    const inputs = Array.from(form.querySelectorAll('input, textarea')) as (HTMLInputElement | HTMLTextAreaElement)[];
+    const inputs = Array.from(form.elements).filter(
+      (el): el is HTMLInputElement | HTMLTextAreaElement => 
+        el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'
+    );
+
+
+    // const inputs = Array.from(form.querySelectorAll('input, textarea')) as (HTMLInputElement | HTMLTextAreaElement)[];
+
     const invalidInputs = inputs.filter(input => !validate(input));
 
     if (invalidInputs.length > 0) {
@@ -112,7 +121,7 @@ const Contact = () => {
         });
         form.reset();
       } else {
-        throw new Error();
+        throw new Error("Form submission failed");
       }
     } catch {
       setStatus('idle');
@@ -128,7 +137,20 @@ const Contact = () => {
       data-animation="fade"
     >
       <p className={styles.accent}>— contact</p>
-      {status !== 'success' ? (
+
+      {status === 'success' ? (
+        <div
+          ref={successRef}
+          className={styles.successMessage}
+          aria-live="polite"
+        >
+          <h2>thanks! <br />I'll get back to you soon</h2>
+          <p>Just let me finish my morning coffee</p>
+          <Button variant="secondary" onClick={() => setStatus('idle')} >
+            Send another message
+          </Button>
+        </div>
+      ) : (
         <>
           <div className={styles.contactTitle}>
             <h2 className="revealItem" data-animation="fade">
@@ -210,18 +232,6 @@ const Contact = () => {
             </Magnetic>
           </form>
         </>
-      ) : (
-        <div
-          ref={successRef}
-          className={styles.successMessage}
-          aria-live="polite"
-        >
-          <h2>thanks! <br />I'll get back to you soon</h2>
-          <p>Just let me finish my morning coffee</p>
-          <Button variant="secondary" onClick={() => setStatus('idle')} >
-            Send another message
-          </Button>
-        </div>
       )}
     </section>
   );

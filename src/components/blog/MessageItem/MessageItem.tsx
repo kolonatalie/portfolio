@@ -70,7 +70,7 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
   }, { dependencies: [isExpanded], scope: bubbleRef });
 
   useGSAP(() => {
-    if (window.location.hash === `#post-${post.id}`) {
+    if (globalThis.location.hash === `#post-${post.id}`) {
       const tl = gsap.timeline();
       tl.to(bubbleRef.current, {
         backgroundColor: 'var(--clr-primary)',
@@ -86,7 +86,7 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
 
   const handleShare = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    const shareUrl = `${window.location.origin}/blog#post-${post.id}`;
+    const shareUrl = `${globalThis.location.origin}/blog#post-${post.id}`;
     if (navigator.share) {
       try {
         await navigator.share({ title: post.title, url: shareUrl });
@@ -102,6 +102,13 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleExpand();
+    }
+  };
+
   return (
     <article
       id={`post-${post.id}`}
@@ -111,6 +118,10 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
         className={styles.bubble}
         ref={bubbleRef}
         onClick={handleExpand}
+        onKeyDown={handleKeyDown}
+        role="button"
+        tabIndex={0}
+        aria-expanded={isExpanded}
       >
         <div className={styles.metaInfo}>
           <span className={styles.date}>{post.date}</span>
@@ -143,7 +154,7 @@ const MessageItem: React.FC<{ post: IPost; index: number }> = ({ post, index }) 
           )}
         </div>
 
-        <div className={styles.footer} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.footer}>
           <div className={styles.actions}>
             <Reactions postId={post.id} />
             <button

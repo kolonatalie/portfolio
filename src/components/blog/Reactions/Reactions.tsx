@@ -43,7 +43,9 @@ const Reactions: React.FC<ReactionsProps> = ({ postId }) => {
 
     REACTION_TYPES.forEach(reaction => {
       const count = localStorage.getItem(`count-${postId}-${reaction.id}`);
-      initialCounts[reaction.id] = count ? parseInt(count, 10) : Math.floor(Math.random() * 50);
+      initialCounts[reaction.id] = count 
+      ? Number.parseInt(count, 10) 
+      : Math.floor(Math.random() * 50);
     });
 
     setTimeout(() => {

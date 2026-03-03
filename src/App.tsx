@@ -13,7 +13,6 @@ import BlogPage from './pages/BlogPage/BlogPage';
 import LinksPage from './pages/LinksPage/LinksPage';
 import NowPage from './pages/NowPage/NowPage';
 import NotFound from './pages/NotFoundPage/NotFound';
-// import PageTransition from './components/layout/PageTransition';
 
 import SmoothScroll from './components/common/SmoothScroll';
 import CustomCursor from './components/common/CustomCursor/CustomCursor';

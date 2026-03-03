@@ -111,6 +111,7 @@ const TechCloud = () => {
       );
     }
   };
+
   const handleKeyDown = (e: React.KeyboardEvent, skillName: string, target: HTMLElement) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -120,9 +121,9 @@ const TechCloud = () => {
 
   return (
     <div ref={containerRef} className={styles.cloudContainer}>
-      {skills.map((skill, i) => (
+      {skills.map((skill) => (
         <div
-          key={i}
+          key={skill.name}
           className={clsx(
             styles.tagWrapper,
             activeSkill === skill.name && styles.isActive
@@ -130,9 +131,9 @@ const TechCloud = () => {
           style={{ zIndex: skill.level === 1 ? 5 : 1 }}
         >
           <Magnetic>
-            <div
-              role="button" 
-              tabIndex={0}
+            <button
+              type="button"
+              // tabIndex={0}
               onClick={(e) => handleToggle(skill.name, e.currentTarget)}
               onKeyDown={(e) => handleKeyDown(e, skill.name, e.currentTarget)}
               aria-expanded={activeSkill === skill.name}
@@ -145,7 +146,7 @@ const TechCloud = () => {
                   <SkillBar percentage={skill.stars * 20} />
                 </div>
               )}
-            </div>
+            </button>
           </Magnetic>
         </div>
       ))}

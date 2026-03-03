@@ -77,7 +77,7 @@ const Header = () => {
 
     if (isHomePage) {
       e.preventDefault();
-      window.history.pushState(null, '', target);
+      globalThis.history.pushState(null, '', target);
 
       const element = document.querySelector(target) as HTMLElement;
 

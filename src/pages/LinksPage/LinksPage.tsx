@@ -3,9 +3,11 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 import Button from '@/components/ui/Button/Button';
-import styles from './LinksPage.module.scss';
 import avatar from '@/assets/images/kolonatalie-main-photo400.webp';
 import { BIO_LINKS, PAGESPEED_METRICS } from '@/data/links';
+import SEO from '@/components/common/SEO';
+
+import styles from './LinksPage.module.scss';
 
 
 const LinksPage = () => {
@@ -107,6 +109,7 @@ const LinksPage = () => {
 
   return (
     <main className={styles.container} ref={containerRef}>
+      <SEO title="Links" path="/go" />
       <section className={styles.profile}>
         <div className={styles.avatar} ref={avatarRef}>
           <div className={styles.ringInner} ref={ringInnerRef} />
@@ -142,7 +145,7 @@ const LinksPage = () => {
               </div>
             ))}
           </div>
-          <p className={styles.metricsTitle}>My portfolio on <a href='' target="_blank" rel="noopener noreferrer">PageSpeed</a></p>
+          <p className={styles.metricsTitle}>My portfolio on <a href='https://pagespeed.web.dev/analysis/https-kolonatalie-vercel-app/ouq4saig4j?form_factor=mobile' target="_blank" rel="noopener noreferrer">PageSpeed</a></p>
         </div>
         <Button
           variant='outline'

@@ -12,7 +12,7 @@ const Magnetic = ({ children, className, strength = 0.3 }: Props) => {
   const magneticRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    const isTouchDevice = globalThis.matchMedia("(pointer: coarse)").matches;
     if (isTouchDevice || !magneticRef.current) return;
 
     const el = magneticRef.current;

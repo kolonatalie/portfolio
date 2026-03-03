@@ -69,7 +69,9 @@ const Reviews = () => {
       className={styles.reviews}
       id="reviews"
       onKeyDown={handleKeyDown}
-      tabIndex={-1}
+      tabIndex={0}
+      role="region"
+      aria-label="Customer reviews carousel"
     >
       <div
         className={clsx(styles.reviewsWrapper, "revealItem")}
@@ -94,6 +96,7 @@ const Reviews = () => {
             <ChevronRight />
           </button>
         </div>
+
         <div
           className={styles.reviewContent}
           ref={quoteRef}
@@ -105,15 +108,19 @@ const Reviews = () => {
             <p className={styles.authorCountry}>{country}</p>
           </div>
         </div>
+
         <div className={styles.pagination}>
-          {reviews.map((_, i) => (
-            <button
-              key={i}
-              className={clsx(styles.dot, i === index && styles.activeDot)}
-              onClick={() => handleDotClick(i)}
-              aria-label={`Go to review ${i + 1}`}
-            />
-          ))}
+          {reviews.map((review, i) => {
+            const dotKey = `dot-${review.name}-${i}`;
+            return (
+              <button
+                key={dotKey}
+                className={clsx(styles.dot, i === index && styles.activeDot)}
+                onClick={() => handleDotClick(i)}
+                aria-label={`Go to review ${review.name}`}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

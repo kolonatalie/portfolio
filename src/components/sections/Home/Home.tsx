@@ -16,16 +16,23 @@ const Home = () => {
 
   const animatedHeadline = useMemo(() => {
     const text = "turning creativity into clean, functional code";
-    return text.split(" ").map((word, i) => (
-      <span key={i} className="word" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-        {word.split("").map((char, j) => (
-          <span key={j} className="char" style={{ display: 'inline-block' }}>
-            {char}
-          </span>
-        ))}
-        <span className="char">&nbsp;</span>
-      </span>
-    ));
+    return text.split(" ").map((word, i) => {
+      const wordKey = `word-${i}-${word}`;
+
+      return (
+        <span key={wordKey} className="word" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+          {word.split("").map((char, j) => {
+            const charKey = `char-${i}-${j}-${char}`;
+            return (
+              <span key={charKey} className="char" style={{ display: 'inline-block' }}>
+                {char}
+              </span>
+            );
+          })}
+          <span className="char">&nbsp;</span>
+        </span>
+      );
+    });
   }, []);
 
   useGSAP(() => {
@@ -88,7 +95,7 @@ const Home = () => {
               I build high-end web apps where motion meets performance,
               and every interaction feels intentional.
               <br />
-              Currently focused on <a className={styles.textLink} href="#projects">interactive 3D</a> and
+              Currently focused on{" "}<a className={styles.textLink} href="#projects">interactive 3D</a> {" "}and{" "}
               <a className={styles.textLink} href="#contact"> accessible web applications.</a>
             </p>
           </div>

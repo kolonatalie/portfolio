@@ -35,7 +35,7 @@ const Projects = () => {
       });
     });
 
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    const isTouch = globalThis.matchMedia("(pointer: coarse)").matches;
     if (isTouch) return;
 
     const cards = gsap.utils.toArray<HTMLElement>(`.${styles.projectCard}`);

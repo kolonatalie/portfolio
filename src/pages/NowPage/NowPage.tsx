@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { NOW_DATA } from '@/data/nowData';
+import SEO from '@/components/common/SEO';
+
 import styles from './NowPage.module.scss';
 
 
@@ -44,6 +46,7 @@ const NowPage = () => {
 
   return (
     <main className={styles.nowContainer} ref={containerRef}>
+      <SEO title="Now" path="/now" />
       <section className={styles.header}>
         <h1 className={styles.title}>What I'm doing now</h1>
         <p className={styles.lastUpdated}>Last updated: March 2026</p>
@@ -51,15 +54,18 @@ const NowPage = () => {
 
       <div className={styles.content}>
         <div className={styles.timelineLine} />
-        {NOW_DATA.map((item, index) => (
-          <section key={index} className={styles.nowItem}>
-            <div className={styles.dot} />
-            <p className={styles.category}>{item.category}</p>
-            <p className={`${styles.text} ${item.lang === 'ua' ? styles.uaText : ''}`}>
-              {item.content}
-            </p>
-          </section>
-        ))}
+        {NOW_DATA.map((item, index) => {
+          const itemKey = `now-${item.category}-${index}`;
+          return (
+            <section key={itemKey} className={styles.nowItem}>
+              <div className={styles.dot} />
+              <p className={styles.category}>{item.category}</p>
+              <p className={`${styles.text} ${item.lang === 'ua' ? styles.uaText : ''}`}>
+                {item.content}
+              </p>
+            </section>
+          );
+        })}
       </div>
 
       <section className={styles.footer}>

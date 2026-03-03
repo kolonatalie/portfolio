@@ -24,18 +24,33 @@ const About = () => {
   const playPopSound = useSound(popSound, 0.3);
 
   const splitText = (text: string) => {
-    return text.split(" ").map((word, i) => (
-      <span key={i} className="word" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-        {
-          word.split("").map((char, j) => (
-            <span key={j} className="char" style={{ display: 'inline-block' }}>
-              {char}
-            </span>
-          ))
-        }
-        <span className="char">&nbsp;</span>
-      </span >
-    ));
+    return text.split(" ").map((word, i) => {
+      const wordKey = `word-${word}-${i}`;
+
+      return (
+        <span
+          key={wordKey}
+          className="word"
+          style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
+        >
+          {
+            word.split("").map((char, j) => {
+              const charKey = `char-${i}-${j}-${char}`;
+
+              return (
+                <span
+                  key={charKey}
+                  className="char"
+                  style={{ display: 'inline-block' }}>
+                  {char}
+                </span>
+              );
+            })
+          }
+          <span className="char">&nbsp;</span>
+        </span >
+      );
+    });
   };
 
   const renderedTitle = useMemo(() => (

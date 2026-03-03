@@ -5,12 +5,14 @@ import gsap from 'gsap';
 
 import postsData from '@/data/posts.json';
 import { IPost } from '@/types/blog';
-
-import styles from './BlogPage.module.scss';
 import MessageItem from '@/components/blog/MessageItem/MessageItem';
 import Magnetic from '@/components/common/Magnetic';
 import Button from '@/components/ui/Button/Button';
 import { CameraVideoIcon, CardTextIcon, ImageIcon, RadarIcon } from '@/components/ui/Icons';
+import SEO from '@/components/common/SEO';
+
+import styles from './BlogPage.module.scss';
+
 
 type ContentType = 'all' | 'image' | 'video' | 'text';
 
@@ -46,8 +48,9 @@ const BlogPage: React.FC = () => {
 
  
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash && hash.startsWith('#post-')) {
+    const hash = globalThis.location.hash;
+
+    if (hash?.startsWith('#post-')) {
       const targetId = hash.replace('#post-', '');
       const postIndex = posts.findIndex(p => p.id === targetId);
       
@@ -77,6 +80,7 @@ const BlogPage: React.FC = () => {
 
   return (
     <main className={styles.container}>
+      <SEO title="Blog" path="/blog" />
       <div className={styles.controls}>
         <div className={styles.searchWrapper}>
           <input 
