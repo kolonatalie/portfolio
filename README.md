@@ -13,7 +13,8 @@
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Sass (SCSS)](https://img.shields.io/badge/Sass(SCSS)-hotpink?style=for-the-badge&logo=sass&logoColor=white)
 
-A high-performance, motion-driven portfolio platform engineered with **React 18**, **TypeScript**, and **GSAP**. 94+ Performance score on Lighthouse.
+A high-performance, motion-driven portfolio platform engineered with **React 18**, **TypeScript**, and **GSAP**.   
+* **97 Performance score** on PageSpeed Insights.
 
 > *Successfully migrated from a Vanilla JS implementation to a robust React + TypeScript architecture to improve scalability and maintainability.*  
 
@@ -24,9 +25,9 @@ A high-performance, motion-driven portfolio platform engineered with **React 18*
 * **Robust Architecture:** Scalable **SASS Modules (7-1 pattern)** with a centralized design system using CSS Variables.
 * **Type-Safe Excellence:** Strict TypeScript implementation across all components, hooks, and GSAP animation targets for maximum maintainability.
 * **GPU-Accelerated Motion:** Optimized animation layers using will-change and contain properties, ensuring a steady 60fps even with complex GSAP timelines.
-* **Performance First:** Optimized asset delivery achieving a **94+ Performance score** on Lighthouse.  
+* **Performance First:** Optimized asset delivery achieving a **97 Performance score** on PageSpeed Insights. [Full report](https://pagespeed.web.dev/analysis/https-kolonatalie-vercel-app/3e0yb32bso?form_factor=mobile)
 
-![Lighthouse Score](/src/assets/images/lighthouse-score.webp)
+![PageSpeed Insights Score](/src/assets/images/pageSpeed-score.webp)
 
 ## Project Structure
 
@@ -87,4 +88,4 @@ I'm always open to discussing creative technology, motion design, or potential c
 ## Note  
 This portfolio is a living lab where I experiment with advanced GSAP techniques, Three.js, and shaders. It evolves as I push the boundaries of what's possible on the web.
 
-![Natalia aka kolonatalie — Creative Developer and Front-End engineer](src/assets/images/kolonatalie-banner-pic.jpg)
+![Natalia aka kolonatalie — Creative Developer and Front-End engineer](src/assets/images/kolonatalie-creative-developer-frontend-engineer.webp)
