@@ -1,7 +1,7 @@
-import portfolioImg from '@/assets/images/developer-portfolio-kolonatalie.webp';
-import sofaImg from '@/assets/images/3d-configurator.webp';
-import starterImg from '@/assets/images/starter-kit.webp';
-import shopImg from '@/assets/images/e-commerce.webp';
+import portfolioImg from '@/assets/images/developer-portfolio-kolonatalie665.webp';
+import sofaImg from '@/assets/images/3d-configurator665.webp';
+import starterImg from '@/assets/images/starter-kit665.webp';
+import shopImg from '@/assets/images/e-commerce665.webp';
 
 export interface Project {
   id: number;

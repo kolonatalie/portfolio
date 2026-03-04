@@ -2,6 +2,10 @@
 
 # Creative Developer Portfolio — [Live Demo](https://kolonatalie.vercel.app)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kolonatalie_portfolio&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kolonatalie_portfolio)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=kolonatalie_portfolio&metric=bugs)](https://sonarcloud.io/summary/new_code?id=kolonatalie_portfolio)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=kolonatalie_portfolio&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=kolonatalie_portfolio)
+
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -11,7 +15,7 @@
 
 A high-performance, motion-driven portfolio platform engineered with **React 18**, **TypeScript**, and **GSAP**. 94+ Performance score on Lighthouse.
 
-> *Successfully migrated from a Vanilla JS implementation to a robust React + TypeScript architecture to improve scalability and maintainability.*
+> *Successfully migrated from a Vanilla JS implementation to a robust React + TypeScript architecture to improve scalability and maintainability.*  
 
 ## Key Highlights (2026 Update)
 
@@ -19,7 +23,9 @@ A high-performance, motion-driven portfolio platform engineered with **React 18*
 * **Creative UX Elements:** Custom-built "Magnetic" components, high-end "Back to Top" navigation with **Lenis Smooth Scroll**, and interactive 3D configurator integration.
 * **Robust Architecture:** Scalable **SASS Modules (7-1 pattern)** with a centralized design system using CSS Variables.
 * **Type-Safe Excellence:** Strict TypeScript implementation across all components, hooks, and GSAP animation targets for maximum maintainability.
-* **Performance First:** Optimized asset delivery achieving a **94 Performance score** on Lighthouse.
+* **GPU-Accelerated Motion:** Optimized animation layers using will-change and contain properties, ensuring a steady 60fps even with complex GSAP timelines.
+* **Performance First:** Optimized asset delivery achieving a **94+ Performance score** on Lighthouse.  
+
 ![Lighthouse Score](/src/assets/images/lighthouse-score.webp)
 
 ## Project Structure
@@ -51,7 +57,6 @@ git clone https://github.com/kolonatalie/portfolio
 npm install --legacy-peer-deps
 
 # Start development server
-git init && npx husky install
 npm run dev
 ```
 > ***Note:** `--legacy-peer-deps` is required for ESLint 9 compatibility with some plugins.*
@@ -79,7 +84,7 @@ I'm always open to discussing creative technology, motion design, or potential c
 [![GitHub Badge](https://img.shields.io/badge/GitHub-3D2B4F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kolonatalie)
 
 
-## 📌 Note  
+## Note  
 This portfolio is a living lab where I experiment with advanced GSAP techniques, Three.js, and shaders. It evolves as I push the boundaries of what's possible on the web.
 
 ![Natalia aka kolonatalie — Creative Developer and Front-End engineer](src/assets/images/kolonatalie-banner-pic.jpg)
