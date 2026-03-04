@@ -1,4 +1,5 @@
-[![Natalia aka kolonatalie — Creative Developer](src/assets/images/demo.gif)](https://kolonatalie.vercel.app)
+[![Natalia aka kolonatalie — Creative Developer](src/assets/images/demo-developer-portfolio-kolonatalie.gif)](https://kolonatalie.vercel.app)
+
 
 # Creative Developer Portfolio — [Live Demo](https://kolonatalie.vercel.app)
 
@@ -13,19 +14,18 @@
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Sass (SCSS)](https://img.shields.io/badge/Sass(SCSS)-hotpink?style=for-the-badge&logo=sass&logoColor=white)
 
-A high-performance, motion-driven portfolio platform engineered with **React 18**, **TypeScript**, and **GSAP**.   
-* **97 Performance score** on PageSpeed Insights.
+A high-performance, motion-driven portfolio platform engineered with **React 18**, **TypeScript**, and **GSAP**. 97 Performance score on PageSpeed Insights.
 
 > *Successfully migrated from a Vanilla JS implementation to a robust React + TypeScript architecture to improve scalability and maintainability.*  
 
 ## Key Highlights (2026 Update)
 
-* **Centralized Animation Engine:** Developed a custom `useScrollReveal` hook using **GSAP ScrollTrigger**, featuring a data-driven system for staggered reveals and complex motion paths.
-* **Creative UX Elements:** Custom-built "Magnetic" components, high-end "Back to Top" navigation with **Lenis Smooth Scroll**, and interactive 3D configurator integration.
-* **Robust Architecture:** Scalable **SASS Modules (7-1 pattern)** with a centralized design system using CSS Variables.
-* **Type-Safe Excellence:** Strict TypeScript implementation across all components, hooks, and GSAP animation targets for maximum maintainability.
-* **GPU-Accelerated Motion:** Optimized animation layers using will-change and contain properties, ensuring a steady 60fps even with complex GSAP timelines.
-* **Performance First:** Optimized asset delivery achieving a **97 Performance score** on PageSpeed Insights. [Full report](https://pagespeed.web.dev/analysis/https-kolonatalie-vercel-app/3e0yb32bso?form_factor=mobile)
+* Developed a custom `useScrollReveal` hook using **GSAP ScrollTrigger**, featuring a data-driven system for staggered reveals and complex motion paths.
+* Custom-built "Magnetic" components, high-end "Back to Top" navigation with **Lenis Smooth Scroll**, and developed custom `useSound` hook
+* Scalable **SASS Modules (7-1 pattern)** with a centralized design system using CSS Variables.
+* **Strict TypeScript** implementation across all components, hooks, and GSAP animation targets for **maximum maintainability**.
+* **GPU-Accelerated Motion.** Optimized animation layers using `will-change` and `contain` properties, ensuring a steady 60fps even with complex GSAP timelines.
+* Optimized asset delivery achieving a **97 Performance score** on PageSpeed Insights. [Full report](https://pagespeed.web.dev/analysis/https-kolonatalie-vercel-app/3e0yb32bso?form_factor=mobile)
 
 ![PageSpeed Insights Score](/src/assets/images/pageSpeed-score.webp)
 
@@ -37,16 +37,16 @@ src/
 ├── components/  # Atomic UI (Buttons, Icons) & Layout (Header, Footer)
 ├── data/        # Centralized project & experience metadata
 ├── hooks/       # Custom engines: useScrollReveal, useSound, useFormValidation
-├── pages/       # Main page and blog page
+├── pages/       # Main page, blog page, links page, now page, 404.
 ├── styles/      # Global SCSS (Sass 7-1: variables, mixins, reset)
 └── utils/       # Math helpers & animation constants
 ````
 ## Tech Stack
 
-* **Core:** React 18, TypeScript 5, Vite
-* **Motion:** GSAP 3, @gsap/react, ScrollTrigger, Lenis (Smooth Scroll)
-* **Styles:** SASS Modules, HSL, PostCSS
-* **Quality:** ESLint 9, Stylelint, Husky
+* Core:  **React 18 • TypeScript 5 • Vite**
+* Motion: **GSAP 3 • @gsap/react • ScrollTrigger • Lenis (Smooth Scroll)**
+* Styles: **SASS Modules • HSL • PostCSS**
+* Quality:  **ESLint 9 • Stylelint • Husky**
 
 
 ## Installation

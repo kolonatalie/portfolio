@@ -1,7 +1,7 @@
 export const BIO_LINKS = [
   {
     title: 'Portfolio',
-    url: 'https://kolonatalie.github.io/portfolio/'
+    url: 'https://kolonatalie.vercel.app'
   },
   {
     title: 'GitHub',
