@@ -49,7 +49,7 @@ const NowPage = () => {
       <SetSeo title="Now" path="/now" />
       <section className={styles.header}>
         <h1 className={styles.title}>What I'm doing now</h1>
-        <p className={styles.lastUpdated}>Last updated: March 2026</p>
+        <p className={styles.lastUpdated}>Last updated: March 26, 2026</p>
       </section>
 
       <div className={styles.content}>

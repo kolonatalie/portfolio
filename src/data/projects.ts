@@ -1,6 +1,6 @@
 import portfolioImg from '@/assets/images/developer-portfolio-kolonatalie665.webp';
 import sofaImg from '@/assets/images/3d-configurator665.webp';
-import starterImg from '@/assets/images/starter-kit665.webp';
+import liquidImg from '@/assets/images/liquid-glass-experience665.webp';
 import shopImg from '@/assets/images/e-commerce665.webp';
 
 export interface Project {
@@ -40,13 +40,13 @@ export const PROJECTS_DATA: Project[] = [
   },
   {
     id: 3,
-    name: "Creative Dev Starter Kit",
-    desc: "A professional boilerplate for high-end web projects",
-    link: "https://github.com/kolonatalie/react-ts-gsap-starter-kit",
-    tags: ["React", "TypeScript", "GSAP", "ESLint 9"],
-    title: "GSAP + React Starter Kit",
-    img: starterImg,
-    alt: "Sass 7-1 and React Starter Kit for Creative Developers",
+    name: "Liquid Glass Experience",
+    desc: "Interactive 3D experience with real-time liquid physics",
+    link: "https://liquid-glass-experience.vercel.app",
+    tags: ["Three.js", "TypeScript", "GSAP", "Rapier physics (WASM)"],
+    title: "Interactive 3D Liquid Glass Experience",
+    img: liquidImg,
+    alt: "Interactive 3D experience with real-time liquid physics. Built with Three.js",
     target: "_blank"
   },
   {
